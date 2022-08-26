@@ -8,14 +8,14 @@ val libVersion = "0.0.1"
 
 android {
 
-    compileSdk = 32
-    buildToolsVersion = "32.0.0"
+    compileSdk = 33
+    buildToolsVersion = "33.0.0"
 
     namespace = "util.mddesign"
 
     defaultConfig {
         minSdk = 23
-        targetSdk = 32
+        targetSdk = 33
 
         consumerProguardFiles.add(File("consumer-rules.pro"))
 

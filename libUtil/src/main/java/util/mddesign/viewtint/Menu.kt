@@ -127,7 +127,7 @@ fun tintMenu(toolbar: Toolbar, menu: Menu?, @ColorInt color: Int) {
         for (i in 0 until menu.size()) {
             val item = menu.getItem(i)
             if (item.icon != null) {
-                item.icon = createTintedDrawable(item.icon, color)
+                item.icon = createTintedDrawable(item.icon!!, color)
             }
             // Search view theming
             if (item.actionView != null &&
