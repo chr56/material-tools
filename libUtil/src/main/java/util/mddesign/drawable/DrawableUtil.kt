@@ -12,8 +12,9 @@ import androidx.annotation.CheckResult
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.DrawableCompat
-import util.mdcolor.ColorUtil
-import util.mdcolor.ColorUtil.adjustAlpha
+import util.mdcolor.adjustAlpha
+import util.mdcolor.shiftColor
+import util.mdcolor.stripAlpha
 import util.mddesign.R
 
 @CheckResult
@@ -57,7 +58,7 @@ internal fun modifySwitchDrawable(
 ): Drawable? {
     val tint =
         if (useDarker) {
-            ColorUtil.shiftColor(tintColor, 1.1f)
+            shiftColor(tintColor, 1.1f)
         } else {
             tintColor
         }.apply {
@@ -88,7 +89,7 @@ internal fun modifySwitchDrawable(
             )
         }.apply {
             if (!compatSwitch) {
-                ColorUtil.stripAlpha(this)
+                stripAlpha(this)
             }
         }
     val colorStateList = ColorStateList(

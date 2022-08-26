@@ -9,8 +9,10 @@ import android.view.View
 import android.view.WindowInsetsController
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.Toolbar
-import util.mdcolor.ColorUtil
+import util.mdcolor.isColorLight
 import util.mdcolor.pref.ThemeColor
+import util.mdcolor.pref.VALUES_CHANGED
+import util.mdcolor.stripAlpha
 import util.mddesign.viewtint.setMenuColor_White
 import util.mddesign.viewtint.setToolbarColorAuto
 import util.mddesign.viewtint.tint
@@ -23,7 +25,7 @@ object Themer {
     @SuppressLint("CommitPrefEdits")
     fun didThemeValuesChange(context: Context, since: Long): Boolean {
         return ThemeColor.isConfigured(context) &&
-            ThemeColor.mPreferences(context).getLong(ThemeColor.VALUES_CHANGED, -1) > since
+            ThemeColor.mPreferences(context).getLong(VALUES_CHANGED, -1) > since
     }
 
     fun setStatusbarColorAuto(activity: Activity) =
@@ -37,7 +39,7 @@ object Themer {
     }
 
     fun setLightStatusbarAuto(activity: Activity, bgColor: Int) =
-        setLightStatusbar(activity, ColorUtil.isColorLight(bgColor))
+        setLightStatusbar(activity, isColorLight(bgColor))
 
     fun setLightStatusbar(activity: Activity, enabled: Boolean) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
@@ -96,7 +98,7 @@ object Themer {
     }
 
     fun setLightNavigationbarAuto(activity: Activity, bgColor: Int) =
-        setLightNavigationbar(activity, ColorUtil.isColorLight(bgColor))
+        setLightNavigationbar(activity, isColorLight(bgColor))
 
     fun setNavigationbarColorAuto(activity: Activity) =
         setNavigationbarColor(activity, ThemeColor.navigationBarColor(activity))
@@ -128,7 +130,7 @@ object Themer {
         var color = color
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             // Task description requires fully opaque color
-            color = ColorUtil.stripAlpha(color)
+            color = stripAlpha(color)
             // Sets color of entry in the system recents page
             activity.setTaskDescription(TaskDescription(activity.title as String, null, color))
         }

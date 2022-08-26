@@ -6,7 +6,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.SearchView
 import androidx.annotation.ColorInt
-import util.mdcolor.ColorUtil
+import util.mdcolor.adjustAlpha
 
 fun setSearchViewContentColor(searchView: SearchView?, @ColorInt color: Int) {
     if (searchView != null) {
@@ -29,7 +29,7 @@ internal fun SearchView.tintTextView(@ColorInt color: Int) {
     mSearchSrcTextViewField.isAccessible = true
     val mSearchSrcTextView = mSearchSrcTextViewField[this] as EditText
     mSearchSrcTextView.setTextColor(color)
-    mSearchSrcTextView.setHintTextColor(ColorUtil.adjustAlpha(color, 0.5f))
+    mSearchSrcTextView.setHintTextColor(adjustAlpha(color, 0.5f))
     setCursorTint(mSearchSrcTextView, color)
 }
 

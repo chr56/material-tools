@@ -1,4 +1,5 @@
 @file:JvmName("SelectorUtil")
+
 package util.mddesign.viewtint
 
 import android.content.res.ColorStateList
@@ -10,7 +11,8 @@ import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import util.mdcolor.ColorUtil
+import util.mdcolor.isColorLight
+import util.mdcolor.shiftColor
 import util.mddesign.R
 import util.mddesign.color.defaultRippleColor
 import util.mddesign.color.disabledColorStateList
@@ -18,14 +20,14 @@ import util.mddesign.drawable.createTintedDrawable
 import util.mddesign.util.setBackgroundCompat
 
 fun setTintSelector(view: View, @ColorInt color: Int, darker: Boolean, useDarkTheme: Boolean) {
-    val isColorLight = ColorUtil.isColorLight(color)
+    val isColorLight = isColorLight(color)
     val disabled =
         ContextCompat.getColor(
             view.context,
             if (useDarkTheme) R.color.MD_button_disabled_dark else R.color.MD_button_disabled_light
         )
-    val pressed = ColorUtil.shiftColor(color, if (darker) 0.9f else 1.1f)
-    val activated = ColorUtil.shiftColor(color, if (darker) 1.1f else 0.9f)
+    val pressed = shiftColor(color, if (darker) 0.9f else 1.1f)
+    val activated = shiftColor(color, if (darker) 1.1f else 0.9f)
     val rippleColor = defaultRippleColor(view.context, isColorLight)
     val textColor =
         ContextCompat.getColor(

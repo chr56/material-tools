@@ -5,12 +5,12 @@ package util.mddesign.color
 import android.content.Context
 import androidx.annotation.CheckResult
 import androidx.annotation.ColorInt
-import util.mdcolor.ColorUtil
+import util.mdcolor.isColorLight
 
 @CheckResult
 @ColorInt
 fun toolbarContentColor(context: Context, @ColorInt toolbarColor: Int): Int {
-    return if (ColorUtil.isColorLight(toolbarColor)) {
+    return if (isColorLight(toolbarColor)) {
         toolbarSubtitleColor(context, toolbarColor)
     } else {
         toolbarTitleColor(context, toolbarColor)
@@ -20,9 +20,9 @@ fun toolbarContentColor(context: Context, @ColorInt toolbarColor: Int): Int {
 @CheckResult
 @ColorInt
 fun toolbarSubtitleColor(context: Context, @ColorInt toolbarColor: Int) =
-    getSecondaryTextColor(context, ColorUtil.isColorLight(toolbarColor))
+    getSecondaryTextColor(context, isColorLight(toolbarColor))
 
 @CheckResult
 @ColorInt
 fun toolbarTitleColor(context: Context, @ColorInt toolbarColor: Int) =
-    getPrimaryTextColor(context, ColorUtil.isColorLight(toolbarColor))
+    getPrimaryTextColor(context, isColorLight(toolbarColor))

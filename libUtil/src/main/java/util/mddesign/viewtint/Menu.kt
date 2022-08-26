@@ -23,8 +23,8 @@ import androidx.appcompat.view.menu.*
 import androidx.appcompat.widget.ActionMenuView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.Toolbar
-import util.mdcolor.ColorUtil
 import util.mdcolor.MaterialColor
+import util.mdcolor.isColorLight
 import util.mdcolor.pref.ThemeColor
 import util.mddesign.color.resolveColor
 import util.mddesign.drawable.createTintedDrawable
@@ -188,7 +188,7 @@ fun setTintForMenuPopupHelper(
                             ListMenuItemView::class.java.declaredField("mRadioButton")
 
                         val isDark =
-                            !ColorUtil.isColorLight(
+                            !isColorLight(
                                 resolveColor(
                                     context,
                                     android.R.attr.windowBackground

@@ -11,7 +11,7 @@ import androidx.annotation.ColorInt
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import util.mdcolor.ColorUtil
+import util.mdcolor.adjustAlpha
 import util.mddesign.color.isWindowBackgroundDark
 import util.mddesign.drawable.createTintedDrawable
 import util.mddesign.util.setBackgroundCompat
@@ -58,7 +58,7 @@ fun View.tint(
                     if (isDark) androidx.appcompat.R.color.ripple_material_dark
                     else androidx.appcompat.R.color.ripple_material_light
                 )
-            val checked = ColorUtil.adjustAlpha(color, 0.4f)
+            val checked = adjustAlpha(color, 0.4f)
             val colorStateList =
                 ColorStateList(
                     arrayOf(
