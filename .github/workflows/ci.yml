@@ -31,10 +31,28 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew assembleRelease --stacktrace --parallel
 
-#      - name: Upload APK
-#        uses: actions/upload-artifact@v2.3.1
-#        with:
-#          name: ci_build
-#          path:
-#          retention-days: 3
+      - name: Upload libColorRes aar
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: libColorRes
+          retention-days: 3
+          path: |
+            ./libColorRes/build/outputs/*-release.aar
+
+      - name: Upload libColor aar
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: libColor
+          retention-days: 3
+          path: |
+            ./libColor/build/outputs/*-release.aar
+
+      - name: Upload libUtil aar
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: libUtil
+          retention-days: 3
+          path: |
+            ./libUtil/build/outputs/*-release.aar
+
 
