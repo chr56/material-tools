@@ -1,5 +1,6 @@
 @file:JvmName("RippleColor")
-package util.mddesign.color
+
+package util.mddesign.util
 
 import android.content.Context
 import androidx.annotation.ColorInt

@@ -42,6 +42,11 @@ android {
 }
 
 dependencies {
+    api(project(":libColorRes"))
+    api(project(":libPref"))
+    api(project(":libUtil"))
+    compileOnly("androidx.appcompat:appcompat:1.4.1")
+    compileOnly("com.google.android.material:material:1.4.0")
 }
 
 publishing {

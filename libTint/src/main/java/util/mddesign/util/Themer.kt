@@ -1,4 +1,4 @@
-package util.mddesign.core
+package util.mddesign.util
 
 import android.annotation.SuppressLint
 import android.app.Activity
