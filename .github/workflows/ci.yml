@@ -39,14 +39,6 @@ jobs:
           path: |
             ./libColorRes/build/outputs/aar/*-release.aar
 
-      - name: Upload libColor aar
-        uses: actions/upload-artifact@v2.3.1
-        with:
-          name: libColor
-          retention-days: 3
-          path: |
-            ./libColor/build/outputs/aar/*-release.aar
-
       - name: Upload libUtil aar
         uses: actions/upload-artifact@v2.3.1
         with:
@@ -54,5 +46,22 @@ jobs:
           retention-days: 3
           path: |
             ./libUtil/build/outputs/aar/*-release.aar
+
+      - name: Upload libPref aar
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: libPref
+          retention-days: 3
+          path: |
+            ./libPref/build/outputs/aar/*-release.aar
+
+      - name: Upload libTint aar
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: libTint
+          retention-days: 3
+          path: |
+            ./libTint/build/outputs/aar/*-release.aar
+
 
 
