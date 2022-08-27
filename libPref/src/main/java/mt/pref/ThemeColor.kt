@@ -11,6 +11,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.IntRange
 import androidx.appcompat.R
 import androidx.core.content.ContextCompat
+import mt.util.color.resolveColor
 import mt.util.color.shiftColor
 
 /**
@@ -179,16 +180,6 @@ private constructor(private val mContext: Context) : ThemeColorInterface {
 
         fun markChanged(context: Context) {
             ThemeColor(context).commit()
-        }
-
-        // Util
-        internal fun resolveColor(context: Context, @AttrRes attr: Int, fallback: Int = 0): Int {
-            val a = context.theme.obtainStyledAttributes(intArrayOf(attr))
-            return try {
-                a.getColor(0, fallback)
-            } finally {
-                a.recycle()
-            }
         }
     }
 }
