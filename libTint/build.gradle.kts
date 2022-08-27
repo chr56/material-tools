@@ -24,7 +24,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -37,6 +37,13 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    publishing {
+        publishing {
+            singleVariant("release") {
+                withSourcesJar()
+            }
+        }
     }
 }
 
