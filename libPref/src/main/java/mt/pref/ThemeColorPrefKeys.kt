@@ -15,10 +15,10 @@ internal const val KEY_ACCENT_COLOR = "accent_color"
 
 // internal const val KEY_STATUS_BAR_COLOR = "status_bar_color"
 // internal const val KEY_NAVIGATION_BAR_COLOR = "navigation_bar_color"
-internal const val KEY_TEXT_COLOR_PRIMARY = "text_color_primary"
+// internal const val KEY_TEXT_COLOR_PRIMARY = "text_color_primary"
 
 // internal const val KEY_TEXT_COLOR_PRIMARY_INVERSE = "text_color_primary_inverse"
-internal const val KEY_TEXT_COLOR_SECONDARY = "text_color_secondary"
+// internal const val KEY_TEXT_COLOR_SECONDARY = "text_color_secondary"
 // internal const val KEY_TEXT_COLOR_SECONDARY_INVERSE = "text_color_secondary_inverse"
 
 internal const val KEY_APPLY_PRIMARYDARK_STATUSBAR = "apply_primarydark_statusbar"
