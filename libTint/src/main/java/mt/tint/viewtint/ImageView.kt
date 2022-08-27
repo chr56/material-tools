@@ -1,6 +1,6 @@
 @file:JvmName("ImageViewUtil")
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.graphics.PorterDuff
 import android.os.Build

@@ -1,6 +1,6 @@
 @file:JvmName("SearchViewTintUtil")
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.widget.EditText
 import android.widget.ImageView

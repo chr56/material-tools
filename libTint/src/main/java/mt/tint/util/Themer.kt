@@ -1,4 +1,4 @@
-package util.mddesign.util
+package mt.tint.util
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -9,13 +9,13 @@ import android.view.View
 import android.view.WindowInsetsController
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.Toolbar
+import mt.tint.viewtint.setMenuColor_White
+import mt.tint.viewtint.setToolbarColorAuto
+import mt.tint.viewtint.tint
 import util.mdcolor.isColorLight
 import util.mdcolor.pref.ThemeColor
 import util.mdcolor.pref.VALUES_CHANGED
 import util.mdcolor.stripAlpha
-import util.mddesign.viewtint.setMenuColor_White
-import util.mddesign.viewtint.setToolbarColorAuto
-import util.mddesign.viewtint.tint
 
 /**
  * @author Karim Abou Zeid (kabouzeid)

@@ -3,7 +3,7 @@
  */
 @file:JvmName("MenuUtil")
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -23,14 +23,14 @@ import androidx.appcompat.view.menu.*
 import androidx.appcompat.widget.ActionMenuView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.Toolbar
+import mt.tint.util.declaredField
+import mt.tint.util.reflectDeclaredField
+import mt.tint.util.removeOnGlobalLayoutListener
 import util.mdcolor.MaterialColor
 import util.mdcolor.isColorLight
 import util.mdcolor.pref.ThemeColor
 import util.mddesign.color.resolveColor
 import util.mddesign.drawable.createTintedDrawable
-import util.mddesign.util.declaredField
-import util.mddesign.util.reflectDeclaredField
-import util.mddesign.util.removeOnGlobalLayoutListener
 
 /**
  * tint the menu

@@ -1,6 +1,6 @@
 @file:JvmName("ProgressBarUtil")
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.content.res.ColorStateList
 import android.os.Build

@@ -1,16 +1,16 @@
-@file:JvmName("DrawableUtil")
+@file:JvmName("DrawableUtil") // ktlint-disable filename
 
-package util.mddesign.util
+package mt.tint.util
 
 import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
+import mt.tint.R
 import util.mdcolor.adjustAlpha
 import util.mdcolor.shiftColor
 import util.mdcolor.stripAlpha
-import util.mddesign.R
 import util.mddesign.drawable.createTintedDrawable
 
 internal fun modifySwitchDrawable(

@@ -1,12 +1,12 @@
-@file:JvmName("SwitchUtil")
+@file:JvmName("SwitchUtil") // ktlint-disable filename
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.annotation.SuppressLint
 import android.widget.Switch
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.SwitchCompat
-import util.mddesign.util.modifySwitchDrawable
+import mt.tint.util.modifySwitchDrawable
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
 fun Switch.setTint(@ColorInt color: Int, useDarker: Boolean) {

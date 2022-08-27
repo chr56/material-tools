@@ -1,13 +1,13 @@
 @file:JvmName("CheckBoxUtil")
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.content.res.ColorStateList
 import android.os.Build
 import android.widget.CheckBox
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
-import util.mddesign.R
+import mt.tint.R
 import util.mddesign.drawable.createTintedDrawable
 
 fun CheckBox.setTint(@ColorInt color: Int, useDarker: Boolean) {

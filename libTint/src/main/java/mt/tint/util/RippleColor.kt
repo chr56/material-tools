@@ -1,6 +1,6 @@
-@file:JvmName("RippleColor")
+@file:JvmName("RippleColor") // ktlint-disable filename
 
-package util.mddesign.util
+package mt.tint.util
 
 import android.content.Context
 import androidx.annotation.ColorInt

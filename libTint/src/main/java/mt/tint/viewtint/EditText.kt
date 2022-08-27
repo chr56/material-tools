@@ -1,6 +1,6 @@
 @file:JvmName("EditTextUtil")
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
-import util.mddesign.R
+import mt.tint.R
 import util.mddesign.drawable.createTintedDrawable
 
 fun EditText.setTint(@ColorInt color: Int, useDarker: Boolean) {

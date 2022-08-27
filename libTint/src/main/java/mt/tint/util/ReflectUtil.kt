@@ -1,4 +1,4 @@
-package util.mddesign.util
+package mt.tint.util
 
 import java.lang.reflect.Field
 import kotlin.jvm.Throws

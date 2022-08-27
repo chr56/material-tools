@@ -1,6 +1,6 @@
 @file:JvmName("ToolbarUtil")
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.content.Context
 import android.view.Menu

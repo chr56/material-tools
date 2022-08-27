@@ -1,6 +1,6 @@
 @file:JvmName("Auto")
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.content.res.ColorStateList
 import android.graphics.drawable.RippleDrawable
@@ -14,7 +14,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import util.mdcolor.adjustAlpha
 import util.mddesign.color.isWindowBackgroundDark
 import util.mddesign.drawable.createTintedDrawable
-import util.mddesign.util.setBackgroundCompat
+import mt.tint.util.setBackgroundCompat
 
 /**
  * @author afollestad, plusCubed

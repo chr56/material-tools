@@ -3,7 +3,7 @@
  */
 @file:JvmName("ViewUtil")
 
-package util.mddesign.util
+package mt.tint.util
 
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable

@@ -3,7 +3,7 @@
  */
 @file:JvmName("ClassUtil")
 
-package util.mddesign.util
+package mt.tint.util
 
 fun isInClassPath(clsName: String): Boolean {
     return try {

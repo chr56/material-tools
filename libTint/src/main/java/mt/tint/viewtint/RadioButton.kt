@@ -1,13 +1,13 @@
 @file:JvmName("RadioButtonUtil")
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.content.res.ColorStateList
 import android.widget.RadioButton
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
+import mt.tint.R
 import util.mdcolor.stripAlpha
-import util.mddesign.R
 
 fun RadioButton.setTint(@ColorInt color: Int, useDarker: Boolean) {
     val sl = ColorStateList(

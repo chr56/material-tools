@@ -10,7 +10,7 @@ android {
     compileSdk = 33
     buildToolsVersion = "33.0.0"
 
-    namespace = "util.mddesign"
+    namespace = "mt.tint"
 
     defaultConfig {
         minSdk = 23

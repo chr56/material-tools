@@ -1,6 +1,6 @@
-@file:JvmName("SelectorUtil")
+@file:JvmName("SelectorUtil") // ktlint-disable filename
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.content.res.ColorStateList
 import android.graphics.drawable.RippleDrawable
@@ -11,13 +11,13 @@ import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import mt.tint.R
+import mt.tint.util.defaultRippleColor
+import mt.tint.util.setBackgroundCompat
 import util.mdcolor.isColorLight
 import util.mdcolor.shiftColor
-import util.mddesign.R
-import util.mddesign.util.defaultRippleColor
 import util.mddesign.color.disabledColorStateList
 import util.mddesign.drawable.createTintedDrawable
-import util.mddesign.util.setBackgroundCompat
 
 fun setTintSelector(view: View, @ColorInt color: Int, darker: Boolean, useDarkTheme: Boolean) {
     val isColorLight = isColorLight(color)

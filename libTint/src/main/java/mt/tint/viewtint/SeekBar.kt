@@ -1,6 +1,6 @@
 @file:JvmName("SeekBarUtil")
 
-package util.mddesign.viewtint
+package mt.tint.viewtint
 
 import android.os.Build
 import android.widget.SeekBar
@@ -8,7 +8,7 @@ import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
-import util.mddesign.R
+import mt.tint.R
 import util.mddesign.color.disabledColorStateList
 
 fun SeekBar.setTint(@ColorInt color: Int, useDarker: Boolean) {
