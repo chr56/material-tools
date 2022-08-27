@@ -14,8 +14,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import mt.tint.R
 import mt.tint.util.defaultRippleColor
 import mt.tint.util.setBackgroundCompat
-import util.mdcolor.isColorLight
-import util.mdcolor.shiftColor
+import util.mddesign.color.isColorLight
+import util.mddesign.color.shiftColor
 import util.mddesign.color.disabledColorStateList
 import util.mddesign.drawable.createTintedDrawable
 

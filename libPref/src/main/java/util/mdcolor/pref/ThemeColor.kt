@@ -11,7 +11,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.IntRange
 import androidx.appcompat.R
 import androidx.core.content.ContextCompat
-import util.mdcolor.shiftColor
+import util.mddesign.color.shiftColor
 
 /**
  * @author Aidan Follestad (afollestad), Karim Abou Zeid (kabouzeid), che_56 (modified)

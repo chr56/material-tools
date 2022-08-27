@@ -1,8 +1,8 @@
 package util.mddesign.color
 
+import android.R
 import android.content.Context
 import androidx.annotation.AttrRes
-import util.mdcolor.isColorLight
 
 @JvmOverloads
 fun resolveColor(context: Context, @AttrRes attr: Int, fallback: Int = 0): Int {
@@ -15,5 +15,5 @@ fun resolveColor(context: Context, @AttrRes attr: Int, fallback: Int = 0): Int {
 }
 
 fun isWindowBackgroundDark(context: Context): Boolean {
-    return !isColorLight(resolveColor(context, android.R.attr.windowBackground))
+    return !isColorLight(resolveColor(context, R.attr.windowBackground))
 }

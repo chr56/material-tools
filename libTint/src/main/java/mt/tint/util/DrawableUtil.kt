@@ -8,9 +8,9 @@ import android.graphics.drawable.Drawable
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import mt.tint.R
-import util.mdcolor.adjustAlpha
-import util.mdcolor.shiftColor
-import util.mdcolor.stripAlpha
+import util.mddesign.color.adjustAlpha
+import util.mddesign.color.shiftColor
+import util.mddesign.color.stripAlpha
 import util.mddesign.drawable.createTintedDrawable
 
 internal fun modifySwitchDrawable(

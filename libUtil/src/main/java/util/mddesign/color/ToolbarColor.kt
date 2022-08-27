@@ -5,7 +5,6 @@ package util.mddesign.color
 import android.content.Context
 import androidx.annotation.CheckResult
 import androidx.annotation.ColorInt
-import util.mdcolor.isColorLight
 
 @CheckResult
 @ColorInt

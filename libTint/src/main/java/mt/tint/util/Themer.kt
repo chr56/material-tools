@@ -12,10 +12,10 @@ import androidx.appcompat.widget.Toolbar
 import mt.tint.viewtint.setMenuColor_White
 import mt.tint.viewtint.setToolbarColorAuto
 import mt.tint.viewtint.tint
-import util.mdcolor.isColorLight
 import util.mdcolor.pref.ThemeColor
 import util.mdcolor.pref.VALUES_CHANGED
-import util.mdcolor.stripAlpha
+import util.mddesign.color.isColorLight
+import util.mddesign.color.stripAlpha
 
 /**
  * @author Karim Abou Zeid (kabouzeid)

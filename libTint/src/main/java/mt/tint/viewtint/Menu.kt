@@ -5,6 +5,7 @@
 
 package mt.tint.viewtint
 
+import android.R
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
@@ -27,7 +28,7 @@ import mt.tint.util.declaredField
 import mt.tint.util.reflectDeclaredField
 import mt.tint.util.removeOnGlobalLayoutListener
 import util.mdcolor.MaterialColor
-import util.mdcolor.isColorLight
+import util.mddesign.color.isColorLight
 import util.mdcolor.pref.ThemeColor
 import util.mddesign.color.resolveColor
 import util.mddesign.drawable.createTintedDrawable
@@ -191,7 +192,7 @@ fun setTintForMenuPopupHelper(
                             !isColorLight(
                                 resolveColor(
                                     context,
-                                    android.R.attr.windowBackground
+                                    R.attr.windowBackground
                                 )
                             )
 
