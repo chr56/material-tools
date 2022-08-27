@@ -7,7 +7,7 @@ package mt.tint.viewtint
 
 import androidx.annotation.ColorInt
 import com.google.android.material.navigation.NavigationView
-import util.mddesign.color.selectableColorStateList
+import mt.util.color.selectableColorStateList
 
 fun NavigationView.setItemIconColors(
     @ColorInt normalColor: Int,

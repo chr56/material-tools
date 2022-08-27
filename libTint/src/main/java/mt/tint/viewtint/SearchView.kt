@@ -6,7 +6,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.SearchView
 import androidx.annotation.ColorInt
-import util.mddesign.color.adjustAlpha
+import mt.util.color.adjustAlpha
 
 fun setSearchViewContentColor(searchView: SearchView?, @ColorInt color: Int) {
     if (searchView != null) {

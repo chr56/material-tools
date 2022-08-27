@@ -7,7 +7,7 @@ import android.widget.RadioButton
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import mt.tint.R
-import util.mddesign.color.stripAlpha
+import mt.util.color.stripAlpha
 
 fun RadioButton.setTint(@ColorInt color: Int, useDarker: Boolean) {
     val sl = ColorStateList(

@@ -28,10 +28,10 @@ import mt.tint.util.declaredField
 import mt.tint.util.reflectDeclaredField
 import mt.tint.util.removeOnGlobalLayoutListener
 import util.mdcolor.MaterialColor
-import util.mddesign.color.isColorLight
+import mt.util.color.isColorLight
 import util.mdcolor.pref.ThemeColor
-import util.mddesign.color.resolveColor
-import util.mddesign.drawable.createTintedDrawable
+import mt.util.color.resolveColor
+import mt.util.drawable.createTintedDrawable
 
 /**
  * tint the menu

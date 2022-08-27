@@ -14,8 +14,8 @@ import mt.tint.viewtint.setToolbarColorAuto
 import mt.tint.viewtint.tint
 import util.mdcolor.pref.ThemeColor
 import util.mdcolor.pref.VALUES_CHANGED
-import util.mddesign.color.isColorLight
-import util.mddesign.color.stripAlpha
+import mt.util.color.isColorLight
+import mt.util.color.stripAlpha
 
 /**
  * @author Karim Abou Zeid (kabouzeid)

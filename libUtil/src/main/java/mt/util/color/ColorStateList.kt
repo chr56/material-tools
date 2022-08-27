@@ -1,6 +1,6 @@
 @file:JvmName("ColorStateList")
 
-package util.mddesign.color
+package mt.util.color
 
 import android.content.res.ColorStateList
 import androidx.annotation.ColorInt

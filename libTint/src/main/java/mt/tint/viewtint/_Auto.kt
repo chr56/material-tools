@@ -11,9 +11,9 @@ import androidx.annotation.ColorInt
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import util.mddesign.color.adjustAlpha
-import util.mddesign.color.isWindowBackgroundDark
-import util.mddesign.drawable.createTintedDrawable
+import mt.util.color.adjustAlpha
+import mt.util.color.isWindowBackgroundDark
+import mt.util.drawable.createTintedDrawable
 import mt.tint.util.setBackgroundCompat
 
 /**

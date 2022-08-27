@@ -11,7 +11,7 @@ import android.graphics.drawable.TransitionDrawable
 import android.view.View
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import androidx.annotation.ColorInt
-import util.mddesign.drawable.createTransitionDrawable
+import mt.util.drawable.createTransitionDrawable
 
 fun removeOnGlobalLayoutListener(v: View, listener: OnGlobalLayoutListener?) {
     v.viewTreeObserver.removeOnGlobalLayoutListener(listener)

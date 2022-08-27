@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.graphics.BlendModeColorFilterCompat
 import androidx.core.graphics.BlendModeCompat
 import mt.tint.R
-import util.mddesign.color.disabledColorStateList
+import mt.util.color.disabledColorStateList
 
 fun SeekBar.setTint(@ColorInt color: Int, useDarker: Boolean) {
     val colorStateList =

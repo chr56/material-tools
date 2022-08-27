@@ -11,7 +11,7 @@ android {
     compileSdk = 33
     buildToolsVersion = "33.0.0"
 
-    namespace = "util.mddesign"
+    namespace = "mt.util"
 
     defaultConfig {
         minSdk = 23

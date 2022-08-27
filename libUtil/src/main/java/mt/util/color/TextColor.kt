@@ -3,7 +3,7 @@
  */
 @file:JvmName("TextColor")
 
-package util.mddesign.color
+package mt.util.color
 
 import android.content.Context
 import androidx.annotation.ColorInt

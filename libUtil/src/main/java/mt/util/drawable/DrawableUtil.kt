@@ -1,6 +1,6 @@
 @file:JvmName("DrawableUtil")
 
-package util.mddesign.drawable
+package mt.util.drawable
 
 import android.content.res.ColorStateList
 import android.graphics.PorterDuff

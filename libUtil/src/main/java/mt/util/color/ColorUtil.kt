@@ -1,6 +1,6 @@
 @file:JvmName("ColorUtil")
 
-package util.mddesign.color
+package mt.util.color
 
 import android.graphics.Color
 import androidx.annotation.ColorInt

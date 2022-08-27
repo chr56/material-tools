@@ -6,7 +6,7 @@ import android.graphics.PorterDuff
 import android.os.Build
 import android.widget.ImageView
 import androidx.annotation.ColorInt
-import util.mddesign.drawable.createTintedDrawable
+import mt.util.drawable.createTintedDrawable
 
 fun ImageView.setDrawableColor(@ColorInt color: Int) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

@@ -4,8 +4,8 @@ package mt.tint.viewtint
 
 import androidx.annotation.ColorInt
 import com.google.android.material.tabs.TabLayout
-import util.mddesign.color.selectableColorStateList
-import util.mddesign.drawable.createTintedDrawable
+import mt.util.color.selectableColorStateList
+import mt.util.drawable.createTintedDrawable
 
 /**
  * @author Karim Abou Zeid (kabouzeid)

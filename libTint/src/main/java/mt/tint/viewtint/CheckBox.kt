@@ -8,7 +8,7 @@ import android.widget.CheckBox
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import mt.tint.R
-import util.mddesign.drawable.createTintedDrawable
+import mt.util.drawable.createTintedDrawable
 
 fun CheckBox.setTint(@ColorInt color: Int, useDarker: Boolean) {
     val colorStateList = ColorStateList(

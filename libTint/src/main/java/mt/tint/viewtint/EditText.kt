@@ -12,7 +12,7 @@ import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import mt.tint.R
-import util.mddesign.drawable.createTintedDrawable
+import mt.util.drawable.createTintedDrawable
 
 fun EditText.setTint(@ColorInt color: Int, useDarker: Boolean) {
     val editTextColorStateList = ColorStateList(
