@@ -1,4 +1,4 @@
-package util.mdcolor.pref
+package mt.pref
 
 /**
  * @author Aidan Follestad (afollestad), Karim Abou Zeid (kabouzeid)

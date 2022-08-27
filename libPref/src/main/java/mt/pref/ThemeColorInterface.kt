@@ -1,4 +1,4 @@
-package util.mdcolor.pref
+package mt.pref
 
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt

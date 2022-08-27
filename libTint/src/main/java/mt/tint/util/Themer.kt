@@ -9,11 +9,11 @@ import android.view.View
 import android.view.WindowInsetsController
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.Toolbar
+import mt.pref.ThemeColor
+import mt.pref.VALUES_CHANGED
 import mt.tint.viewtint.setMenuColor_White
 import mt.tint.viewtint.setToolbarColorAuto
 import mt.tint.viewtint.tint
-import util.mdcolor.pref.ThemeColor
-import util.mdcolor.pref.VALUES_CHANGED
 import mt.util.color.isColorLight
 import mt.util.color.stripAlpha
 

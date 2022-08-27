@@ -8,7 +8,7 @@ val libVersion = "0.0.1"
 android {
     compileSdk = 33
     buildToolsVersion = "33.0.0"
-    namespace = "util.mdcolor"
+    namespace = "mt.pref"
 
     defaultConfig {
         minSdk = 23

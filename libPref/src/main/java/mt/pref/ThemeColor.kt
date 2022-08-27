@@ -1,4 +1,4 @@
-package util.mdcolor.pref
+package mt.pref
 
 import android.annotation.SuppressLint
 import android.content.Context
