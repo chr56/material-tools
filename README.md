@@ -11,20 +11,20 @@ view tint.
 
 [![](https://jitpack.io/v/chr56/material-tools.svg)](https://jitpack.io/#chr56/material-tools)
 
-This is kotlin library now.
+This is a kotlin library now.
 
 ```groovy
 dependencies {
-    // color value resource (non-kotlin)
-    implementation("com.github.chr56.material-tools:mdColorRes:0.0.1")
-    // utility
-    implementation("com.github.chr56.material-tools:mdUtil:0.0.1")
-    // preference to store color
-    implementation("com.github.chr56.material-tools:mdPref:0.0.1")
-    // tint the Views
-    implementation("com.github.chr56.material-tools:mdTint:0.0.1")
+    // mdColorRes: most material color values resource (non-kotlin)
+    implementation("com.github.chr56.material-tools:mdColorRes:0.0.2")
+    // mdUtil: utility
+    implementation("com.github.chr56.material-tools:mdUtil:0.0.2")
+    // mdPref: make preferences to store theme color
+    implementation("com.github.chr56.material-tools:mdPref:0.0.2")
+    // mdTint: tint the Views
+    implementation("com.github.chr56.material-tools:mdTint:0.0.2")
 
-    // also, you need add appcompat manually
+    // also, you need to add `appcompat` manually
     implementation("androidx.appcompat:appcompat:1.4.1")
     // and Google material design library if you use mdTint
     implementation("com.google.android.material:material:1.4.0")
