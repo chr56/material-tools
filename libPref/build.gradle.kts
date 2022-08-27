@@ -3,7 +3,7 @@ plugins {
     id("maven-publish")
     id("org.jetbrains.kotlin.android")
 }
-val libVersion = "0.0.1"
+val libVersion = rootProject.extra["libVersion"] as String
 
 android {
     compileSdk = 33

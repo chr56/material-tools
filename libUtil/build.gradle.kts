@@ -3,8 +3,7 @@ plugins {
     id("kotlin-android")
     id("maven-publish")
 }
-
-val libVersion = "0.0.1"
+val libVersion = rootProject.extra["libVersion"] as String
 
 android {
 
