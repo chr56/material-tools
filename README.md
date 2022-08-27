@@ -16,13 +16,13 @@ This is a kotlin library now.
 ```groovy
 dependencies {
     // mdColorRes: most material color values resource (non-kotlin)
-    implementation("com.github.chr56.material-tools:mdColorRes:0.0.2")
+    implementation("com.github.chr56.material-tools:mdColorRes:0.0.3")
     // mdUtil: utility
-    implementation("com.github.chr56.material-tools:mdUtil:0.0.2")
+    implementation("com.github.chr56.material-tools:mdUtil:0.0.3")
     // mdPref: make preferences to store theme color
-    implementation("com.github.chr56.material-tools:mdPref:0.0.2")
+    implementation("com.github.chr56.material-tools:mdPref:0.0.3")
     // mdTint: tint the Views
-    implementation("com.github.chr56.material-tools:mdTint:0.0.2")
+    implementation("com.github.chr56.material-tools:mdTint:0.0.3")
 
     // also, you need to add `appcompat` manually
     implementation("androidx.appcompat:appcompat:1.4.1")
