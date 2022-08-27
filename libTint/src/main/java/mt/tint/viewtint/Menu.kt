@@ -23,6 +23,7 @@ import androidx.appcompat.view.menu.*
 import androidx.appcompat.widget.ActionMenuView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.Toolbar
+import mt.color.MaterialColor
 import mt.pref.ThemeColor
 import mt.tint.util.declaredField
 import mt.tint.util.reflectDeclaredField
@@ -30,7 +31,6 @@ import mt.tint.util.removeOnGlobalLayoutListener
 import mt.util.color.isColorLight
 import mt.util.color.resolveColor
 import mt.util.drawable.createTintedDrawable
-import util.mdcolor.MaterialColor
 
 /**
  * tint the menu
