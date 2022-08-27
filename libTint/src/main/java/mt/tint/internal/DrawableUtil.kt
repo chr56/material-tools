@@ -1,6 +1,6 @@
 @file:JvmName("DrawableUtil") // ktlint-disable filename
 
-package mt.tint.util
+package mt.tint.internal
 
 import android.content.Context
 import android.content.res.ColorStateList

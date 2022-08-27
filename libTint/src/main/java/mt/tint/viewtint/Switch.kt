@@ -6,7 +6,7 @@ import android.annotation.SuppressLint
 import android.widget.Switch
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.SwitchCompat
-import mt.tint.util.modifySwitchDrawable
+import mt.tint.internal.modifySwitchDrawable
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
 fun Switch.setTint(@ColorInt color: Int, useDarker: Boolean) {

@@ -11,10 +11,10 @@ import androidx.annotation.ColorInt
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import mt.tint.internal.setBackgroundCompat
 import mt.util.color.adjustAlpha
 import mt.util.color.isWindowBackgroundDark
 import mt.util.drawable.createTintedDrawable
-import mt.tint.util.setBackgroundCompat
 
 /**
  * @author afollestad, plusCubed

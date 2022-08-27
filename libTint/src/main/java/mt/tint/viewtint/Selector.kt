@@ -12,11 +12,11 @@ import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import mt.tint.R
-import mt.tint.util.defaultRippleColor
-import mt.tint.util.setBackgroundCompat
+import mt.tint.internal.defaultRippleColor
+import mt.tint.internal.setBackgroundCompat
+import mt.util.color.disabledColorStateList
 import mt.util.color.isColorLight
 import mt.util.color.shiftColor
-import mt.util.color.disabledColorStateList
 import mt.util.drawable.createTintedDrawable
 
 fun setTintSelector(view: View, @ColorInt color: Int, darker: Boolean, useDarkTheme: Boolean) {

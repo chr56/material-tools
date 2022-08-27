@@ -3,7 +3,7 @@
  */
 @file:JvmName("ClassUtil")
 
-package mt.tint.util
+package mt.tint.internal
 
 fun isInClassPath(clsName: String): Boolean {
     return try {

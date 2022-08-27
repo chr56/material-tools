@@ -1,4 +1,4 @@
-package mt.tint.util
+package mt.tint
 
 import android.annotation.SuppressLint
 import android.app.Activity
