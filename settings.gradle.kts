@@ -17,4 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "MaterialTools"
 rootProject.buildFileName = "build.gradle.kts"
 
-include("libUtil", "libColor", "libColorRes")
+include("libUtil", "libPref", "libColorRes")

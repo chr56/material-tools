@@ -64,7 +64,7 @@ android {
 }
 
 dependencies {
-    api(project(":libColor"))
+    api(project(":libPref"))
     compileOnly("androidx.appcompat:appcompat:1.4.1")
     compileOnly("com.google.android.material:material:1.4.0")
 }

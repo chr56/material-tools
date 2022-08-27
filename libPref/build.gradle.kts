@@ -69,7 +69,7 @@ publishing {
             }
 
             groupId = "com.github.chr56"
-            artifactId = "mdColor"
+            artifactId = "mdPref"
             version = libVersion
         }
     }
