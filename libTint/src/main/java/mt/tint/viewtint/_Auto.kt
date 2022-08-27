@@ -1,5 +1,8 @@
-@file:JvmName("Auto")
+@file:JvmName("Auto") // ktlint-disable filename
 
+/**
+ * @author afollestad, plusCubed
+ */
 package mt.tint.viewtint
 
 import android.content.res.ColorStateList
@@ -15,10 +18,6 @@ import mt.tint.internal.setBackgroundCompat
 import mt.util.color.adjustAlpha
 import mt.util.color.isWindowBackgroundDark
 import mt.util.drawable.createTintedDrawable
-
-/**
- * @author afollestad, plusCubed
- */
 
 /**
  * @param tintBackground need to tint the background of a view or not
@@ -90,3 +89,9 @@ fun View.tint(
         }
     }
 }
+
+fun setTint(view: View, @ColorInt color: Int) = view.tint(color, false)
+
+@JvmName("setBackgroundTintAuto")
+fun View.setBackgroundTint(@ColorInt color: Int) = this.tint(color, true)
+fun setBackgroundTint(view: View, @ColorInt color: Int) = view.setBackgroundTint(color)

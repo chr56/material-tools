@@ -181,5 +181,11 @@ private constructor(private val mContext: Context) : ThemeColorInterface {
         fun markChanged(context: Context) {
             ThemeColor(context).commit()
         }
+
+        @SuppressLint("CommitPrefEdits")
+        fun didThemeValuesChange(context: Context, since: Long): Boolean {
+            return ThemeColor.isConfigured(context) &&
+                ThemeColor.mPreferences(context).getLong(VALUES_CHANGED, -1) > since
+        }
     }
 }

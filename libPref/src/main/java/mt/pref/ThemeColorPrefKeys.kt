@@ -7,7 +7,7 @@ package mt.pref
 internal const val CONFIG_PREFS_KEY_DEFAULT = "theme_color_cfg"
 internal const val IS_CONFIGURED_KEY = "is_configured"
 internal const val IS_CONFIGURED_VERSION_KEY = "is_configured_version"
-const val VALUES_CHANGED = "values_changed"
+internal const val VALUES_CHANGED = "values_changed"
 internal const val KEY_PRIMARY_COLOR = "primary_color"
 
 // internal const val KEY_PRIMARY_COLOR_DARK = "primary_color_dark"
