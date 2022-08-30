@@ -16,6 +16,7 @@ import mt.tint.internal.defaultRippleColor
 import mt.tint.internal.setBackgroundCompat
 import mt.util.color.disabledColorStateList
 import mt.util.color.isColorLight
+import mt.util.color.primaryTextColor
 import mt.util.color.shiftColor
 import mt.util.drawable.createTintedDrawable
 
@@ -29,11 +30,7 @@ fun setTintSelector(view: View, @ColorInt color: Int, darker: Boolean, useDarkTh
     val pressed = shiftColor(color, if (darker) 0.9f else 1.1f)
     val activated = shiftColor(color, if (darker) 1.1f else 0.9f)
     val rippleColor = defaultRippleColor(view.context, isColorLight)
-    val textColor =
-        ContextCompat.getColor(
-            view.context,
-            if (isColorLight) R.color.MD_primary_text_light else R.color.MD_primary_text_dark
-        )
+    val textColor = view.context.primaryTextColor(useDarkTheme)
     val sl: ColorStateList
 
     when (view) {
@@ -107,10 +104,7 @@ fun setTintSelector(view: View, @ColorInt color: Int, darker: Boolean, useDarkTh
         view.setTextColor(
             disabledColorStateList(
                 textColor,
-                ContextCompat.getColor(
-                    view.getContext(),
-                    if (isColorLight) R.color.MD_text_disabled_light else R.color.MD_text_disabled_dark
-                )
+                view.context.primaryTextColor(useDarkTheme)
             )
         )
     }

@@ -12,6 +12,8 @@ import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
 import mt.color.R
+import mt.util.color.primaryDisabledTextColor
+import mt.util.color.primaryTextColor
 import mt.util.drawable.createTintedDrawable
 
 fun EditText.setTint(@ColorInt color: Int, useDarker: Boolean) {
@@ -28,10 +30,7 @@ fun EditText.setTint(@ColorInt color: Int, useDarker: Boolean) {
             intArrayOf()
         ),
         intArrayOf(
-            ContextCompat.getColor(
-                context,
-                if (useDarker) R.color.MD_text_disabled_dark else R.color.MD_text_disabled_light
-            ),
+            context.primaryDisabledTextColor(!useDarker),
             ContextCompat.getColor(
                 context,
                 if (useDarker) R.color.MD_control_normal_dark else R.color.MD_control_normal_light
