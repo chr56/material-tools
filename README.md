@@ -26,6 +26,8 @@ dependencies {
 
     // also, you need to add `appcompat` manually
     implementation("androidx.appcompat:appcompat:1.4.1")
+    // if you are not using lifecycle 2.4.0 and need listening preference changes in mdPref
+    implementation("androidx.lifecycle:lifecycle-common-java8:2.3.1")
     // and Google material design library if you use mdTint
     implementation("com.google.android.material:material:1.4.0")
 }

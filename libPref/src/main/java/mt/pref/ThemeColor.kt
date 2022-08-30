@@ -1,10 +1,15 @@
 package mt.pref
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Color
+import android.os.Handler
+import android.os.Looper
 import androidx.annotation.CheckResult
 import androidx.annotation.ColorInt
 import androidx.appcompat.R
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import mt.pref.internal.ThemeStore
 import mt.util.color.resolveColor
 import mt.util.color.shiftColor
@@ -68,5 +73,54 @@ object ThemeColor {
     fun statusBarColor(context: Context): Int {
         return if (coloredStatusBar(context)) primaryColorDark(context)
         else Color.BLACK
+    }
+
+    fun registerPreferenceChangeListener(
+        l: ThemePreferenceChangeListener,
+        appContext: Context,
+        host: LifecycleOwner
+    ) {
+        val context = appContext.applicationContext
+        host.lifecycle.addObserver(object : DefaultLifecycleObserver {
+            val themeListener = l
+            val listener =
+                SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+                    Handler(Looper.myLooper() ?: Looper.getMainLooper())
+                        .postDelayed(
+                            {
+                                when (key) {
+                                    KEY_ACCENT_COLOR ->
+                                        themeListener.onAccentColorChanged(accentColor(context))
+                                    KEY_PRIMARY_COLOR ->
+                                        themeListener.onPrimaryColorChanged(primaryColor(context))
+                                    KEY_APPLY_PRIMARYDARK_STATUSBAR ->
+                                        themeListener.onStatusBarTintSettingChanged(
+                                            coloredStatusBar(context)
+                                        )
+                                    KEY_APPLY_PRIMARY_NAVBAR ->
+                                        themeListener.onNavigationBarTintSettingChanged(
+                                            coloredNavigationBar(context)
+                                        )
+                                }
+                            },
+                            500
+                        )
+                }
+
+            override fun onCreate(owner: LifecycleOwner) {
+                ThemeStore(context).pref.registerOnSharedPreferenceChangeListener(listener)
+            }
+
+            override fun onDestroy(owner: LifecycleOwner) {
+                ThemeStore(context).pref.unregisterOnSharedPreferenceChangeListener(listener)
+            }
+        })
+    }
+
+    interface ThemePreferenceChangeListener {
+        fun onAccentColorChanged(@ColorInt newColor: Int)
+        fun onPrimaryColorChanged(@ColorInt newColor: Int)
+        fun onStatusBarTintSettingChanged(coloredStatusBar: Boolean)
+        fun onNavigationBarTintSettingChanged(coloredNavigationBar: Boolean)
     }
 }
