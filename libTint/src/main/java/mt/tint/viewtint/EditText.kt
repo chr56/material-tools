@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
-import mt.tint.R
+import mt.color.R
 import mt.util.drawable.createTintedDrawable
 
 fun EditText.setTint(@ColorInt color: Int, useDarker: Boolean) {

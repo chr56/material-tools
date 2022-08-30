@@ -11,7 +11,7 @@ import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import mt.tint.R
+import mt.color.R
 import mt.tint.internal.defaultRippleColor
 import mt.tint.internal.setBackgroundCompat
 import mt.util.color.disabledColorStateList

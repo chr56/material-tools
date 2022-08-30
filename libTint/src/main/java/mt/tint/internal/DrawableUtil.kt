@@ -7,7 +7,7 @@ import android.content.res.ColorStateList
 import android.graphics.drawable.Drawable
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
-import mt.tint.R
+import mt.color.R
 import mt.util.color.adjustAlpha
 import mt.util.color.shiftColor
 import mt.util.color.stripAlpha
