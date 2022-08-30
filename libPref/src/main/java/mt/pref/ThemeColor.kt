@@ -59,18 +59,14 @@ object ThemeColor {
     @CheckResult
     @ColorInt
     fun navigationBarColor(context: Context): Int {
-        return if (!coloredNavigationBar(context)) {
-            Color.BLACK
-        } else primaryColor(
-            context
-        )
+        return if (coloredNavigationBar(context)) primaryColor(context)
+        else Color.BLACK
     }
 
     @CheckResult
     @ColorInt
     fun statusBarColor(context: Context): Int {
-        return if (!coloredStatusBar(context)) {
-            Color.BLACK
-        } else primaryColorDark(context)
+        return if (coloredStatusBar(context)) primaryColorDark(context)
+        else Color.BLACK
     }
 }
