@@ -19,19 +19,29 @@ import mt.util.color.isColorLight
 import mt.util.color.stripAlpha
 
 fun Activity.setStatusbarColorAuto() =
-    setStatusbarColor(ThemeColor.statusBarColor(this))
+    setStatusbarColor(
+        ThemeColor.statusBarColor(this)
+    )
 
-fun Activity.setStatusbarColor(color: Int) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        this.window.statusBarColor = color
-        setLightStatusbarAuto(color)
+/**
+ * @param color statusbar background color
+ * @param stubViewId stub view of statusbar if you have any
+ */
+fun Activity.setStatusbarColor(@ColorInt color: Int, stubViewId: Int = 0) {
+    with(this.window) {
+        statusBarColor = color
+        if (stubViewId != 0) {
+            decorView.rootView.findViewById<View>(stubViewId)
+                ?.setBackgroundColor(color)
+        }
     }
+    requireLightStatusbarAuto(color)
 }
 
-fun Activity.setLightStatusbarAuto(bgColor: Int) =
-    setLightStatusbar(isColorLight(bgColor))
+fun Activity.requireLightStatusbarAuto(bgColor: Int) =
+    requireLightStatusbar(isColorLight(bgColor))
 
-fun Activity.setLightStatusbar(enabled: Boolean) {
+fun Activity.requireLightStatusbar(enabled: Boolean) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
         val wic = this.window.insetsController
         if (wic != null) {
@@ -47,8 +57,8 @@ fun Activity.setLightStatusbar(enabled: Boolean) {
                 )
             }
         }
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-        val decorView = this.window.decorView.run {
+    } else {
+        this.window.decorView.run {
             val old = systemUiVisibility
             systemUiVisibility =
                 if (enabled) {
@@ -60,7 +70,24 @@ fun Activity.setLightStatusbar(enabled: Boolean) {
     }
 }
 
-fun Activity.setLightNavigationbar(enabled: Boolean) {
+fun Activity.setNavigationBarColorAuto() =
+    setNavigationBarColor(
+        ThemeColor.navigationBarColor(this)
+    )
+
+/**
+ * @param color NavigationBar background color
+ */
+fun Activity.setNavigationBarColor(@ColorInt color: Int) {
+    this.window.navigationBarColor = color
+    requireLightNavigationBarAuto(color)
+}
+
+fun Activity.requireLightNavigationBarAuto(bgColor: Int) {
+    requireLightNavigationBar(isColorLight(bgColor))
+}
+
+fun Activity.requireLightNavigationBar(enabled: Boolean) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
         this.window.insetsController?.let { insetsController ->
             if (enabled) {
@@ -84,19 +111,6 @@ fun Activity.setLightNavigationbar(enabled: Boolean) {
             }
             systemUiVisibility = visibility
         }
-    }
-}
-
-fun Activity.setLightNavigationbarAuto(bgColor: Int) =
-    setLightNavigationbar(isColorLight(bgColor))
-
-fun Activity.setNavigationbarColorAuto() =
-    setNavigationbarColor(ThemeColor.navigationBarColor(this))
-
-fun Activity.setNavigationbarColor(color: Int) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        this.window.navigationBarColor = color
-        setLightNavigationbarAuto(color)
     }
 }
 
