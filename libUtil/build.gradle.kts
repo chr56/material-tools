@@ -63,6 +63,7 @@ android {
 }
 
 dependencies {
+    api(projects.libColorRes)
     compileOnly("androidx.appcompat:appcompat:1.4.1")
 }
 
