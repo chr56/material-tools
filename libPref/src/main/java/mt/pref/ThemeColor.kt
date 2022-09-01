@@ -22,7 +22,7 @@ object ThemeColor {
 
     fun editTheme(context: Context): ThemeStore = ThemeStore.edit(context)
     fun edit(context: Context, block: ThemeStore.() -> Unit) =
-        ThemeStore.edit(context).apply(block)
+        ThemeStore.edit(context).apply(block).commit()
 
     @CheckResult
     @ColorInt
