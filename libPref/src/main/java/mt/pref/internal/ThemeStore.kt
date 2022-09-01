@@ -23,7 +23,7 @@ class ThemeStore internal constructor(private val mContext: Context) {
         CONFIG_PREFS_KEY_DEFAULT,
         Context.MODE_PRIVATE
     )
-    private val mEditor get() = pref.edit()
+    private val mEditor = pref.edit()
 
     fun primaryColor(@ColorInt color: Int): ThemeStore {
         mEditor.putInt(KEY_PRIMARY_COLOR, color)
