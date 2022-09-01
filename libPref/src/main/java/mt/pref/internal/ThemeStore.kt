@@ -61,15 +61,17 @@ class ThemeStore internal constructor(private val mContext: Context) {
         return this
     }
 
-    fun markChanged() {
-        mEditor.commit()
-    }
+    fun markChanged() = mEditor.commit()
 
-    fun commit() {
+    fun commit() =
         mEditor.putLong(VALUES_CHANGED, System.currentTimeMillis())
             .putBoolean(IS_CONFIGURED_KEY, true)
             .commit()
-    }
+
+    fun apply() =
+        mEditor.putLong(VALUES_CHANGED, System.currentTimeMillis())
+            .putBoolean(IS_CONFIGURED_KEY, true)
+            .apply()
 
     /**
      * **Dangerous !**, this reset all SharedPreferences!
@@ -96,23 +98,20 @@ class ThemeStore internal constructor(private val mContext: Context) {
     }
 
     companion object {
-        fun edit(context: Context): ThemeStore = ThemeStore(context)
+        internal fun edit(context: Context): ThemeStore = ThemeStore(context)
 
-        fun isConfigured(context: Context): Boolean {
-            return ThemeStore(context).isConfigured()
-        }
+        fun isConfigured(context: Context): Boolean =
+            ThemeStore(context).isConfigured()
 
         fun isConfigured(
             context: Context,
             @IntRange(from = 0, to = Int.MAX_VALUE.toLong()) version: Int
-        ): Boolean {
-            return ThemeStore(context).isConfigured(version)
-        }
+        ): Boolean =
+            ThemeStore(context).isConfigured(version)
 
         @SuppressLint("CommitPrefEdits")
-        fun didThemeValuesChange(context: Context, since: Long): Boolean {
-            return isConfigured(context) &&
+        fun didThemeValuesChange(context: Context, since: Long): Boolean =
+            isConfigured(context) &&
                 ThemeStore(context).pref.getLong(VALUES_CHANGED, -1) > since
-        }
     }
 }
