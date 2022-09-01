@@ -14,7 +14,7 @@ import mt.pref.ThemeColor.accentColor
 import mt.util.resolveAttr
 import mt.views.R
 
-class PreferenceCategory : PreferenceCategory {
+open class PreferenceCategory : PreferenceCategory {
 
     @JvmOverloads
     constructor(

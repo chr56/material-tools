@@ -14,7 +14,7 @@ import mt.util.isNightMode
  * automatically self-tint Switch
  * @author Aidan Follestad (afollestad)
  */
-class Switch : SwitchCompat {
+open class Switch : SwitchCompat {
 
     @JvmOverloads
     constructor(

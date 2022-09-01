@@ -13,7 +13,7 @@ import mt.tint.viewtint.setTint
  * automatically self-tint SeekBar
  * @author Aidan Follestad (afollestad)
  */
-class SeekBar : AppCompatSeekBar {
+open class SeekBar : AppCompatSeekBar {
 
     @JvmOverloads
     constructor(

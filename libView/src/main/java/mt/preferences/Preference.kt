@@ -15,7 +15,7 @@ import mt.views.R
  * self-tint
  * @author Aidan Follestad (afollestad)
  */
-class Preference : Preference {
+open class Preference : Preference {
 
     @JvmOverloads
     constructor(

@@ -11,7 +11,7 @@ import mt.util.color.primaryTextColor
 /**
  * @author Aidan Follestad (afollestad)
  */
-class PrimaryTextView : AppCompatTextView {
+open class PrimaryTextView : AppCompatTextView {
 
     @JvmOverloads
     constructor(

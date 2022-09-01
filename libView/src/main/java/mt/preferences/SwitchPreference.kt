@@ -14,7 +14,8 @@ import mt.views.R
 /**
  * @author Aidan Follestad (afollestad)
  */
-class SwitchPreference : CheckBoxPreference {
+
+open class SwitchPreference : CheckBoxPreference {
     @JvmOverloads
     constructor(
         context: Context,

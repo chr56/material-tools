@@ -11,7 +11,7 @@ import mt.util.color.secondaryTextColor
 /**
  * @author Aidan Follestad (afollestad)
  */
-class SecondaryTextView : AppCompatTextView {
+open class SecondaryTextView : AppCompatTextView {
 
     @JvmOverloads
     constructor(

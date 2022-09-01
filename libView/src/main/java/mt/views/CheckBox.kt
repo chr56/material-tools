@@ -14,7 +14,7 @@ import mt.util.isNightMode
  * automatically self-tint CheckBox
  * @author Aidan Follestad (afollestad)
  */
-class CheckBox : AppCompatCheckBox {
+open class CheckBox : AppCompatCheckBox {
 
     @JvmOverloads
     constructor(

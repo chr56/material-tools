@@ -15,7 +15,7 @@ import mt.views.R
  * self-tint
  * @author Aidan Follestad (afollestad)
  */
-class DialogPreference : DialogPreference {
+open class DialogPreference : DialogPreference {
 
     constructor(
         context: Context,

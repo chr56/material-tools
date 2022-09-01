@@ -14,7 +14,7 @@ import mt.views.R
 /**
  * @author Aidan Follestad (afollestad)
  */
-class EditTextPreference : EditTextPreference {
+open class EditTextPreference : EditTextPreference {
     @JvmOverloads
     constructor(
         context: Context,
