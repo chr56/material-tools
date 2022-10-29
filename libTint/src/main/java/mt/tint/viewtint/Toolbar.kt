@@ -36,11 +36,7 @@ fun setToolbarTextColor(
         toolbar.setTitleTextColor(titleTextColor)
         toolbar.setSubtitleTextColor(subtitleTextColor)
         // Icon
-        if (toolbar.navigationIcon != null) {
-            // Tint the toolbar navigation icon (e.g. back, drawer, etc.)
-            toolbar.navigationIcon =
-                createTintedDrawable(toolbar.navigationIcon!!, iconColor)
-        }
+        toolbar.tintNavigationIcon(iconColor)
     }
 }
 
@@ -54,3 +50,17 @@ fun setToolbarTextColor(
     toolbarTitleColor(context, toolbarBackgroundColor),
     toolbarSubtitleColor(context, toolbarBackgroundColor)
 )
+
+
+fun Toolbar.tintNavigationIcon(@ColorInt color: Int) {
+    navigationIcon?.let {
+        navigationIcon = createTintedDrawable(it, color)
+    }
+}
+
+
+fun Toolbar.tintCollapseIcon(@ColorInt color: Int) {
+    collapseIcon?.let {
+        collapseIcon = createTintedDrawable(it, color)
+    }
+}

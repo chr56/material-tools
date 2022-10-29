@@ -17,20 +17,19 @@ import android.view.ViewGroup
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.widget.CheckBox
 import android.widget.RadioButton
-import android.widget.SearchView
 import androidx.annotation.ColorInt
 import androidx.appcompat.view.menu.*
 import androidx.appcompat.widget.ActionMenuView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.Toolbar
-import mt.color.MaterialColor
-import mt.pref.ThemeColor
 import mt.tint.internal.declaredField
 import mt.tint.internal.reflectDeclaredField
 import mt.tint.internal.removeOnGlobalLayoutListener
 import mt.util.color.isColorLight
 import mt.util.color.resolveColor
 import mt.util.drawable.createTintedDrawable
+import android.widget.SearchView as SearchViewOS
+import androidx.appcompat.widget.SearchView as SearchViewX
 
 /**
  * tint the menu
@@ -48,7 +47,7 @@ fun setMenuColor(
     @ColorInt menuWidgetColor: Int
 ) {
     val actualMenu: Menu? = menu ?: toolbar.menu
-    tintMenu(toolbar, actualMenu, menuWidgetColor)
+    tintMenuActionIcons(toolbar, actualMenu, menuWidgetColor)
     applyOverflowMenuTint(context, toolbar, menuWidgetColor)
     if (context is Activity) {
         context.setOverflowButtonColor(menuWidgetColor)
@@ -86,66 +85,32 @@ fun setMenuColor(
     }
 }
 
-/**
- * tint the menu, menu icon color is current accent color
- *
- * @param context context of toolbar's container
- * @param toolbar menu's container
- * @param menu    the menu to tint
- */
-internal fun setMenuColor_Accent(context: Context, toolbar: Toolbar?, menu: Menu?) {
-    setMenuColor(context, toolbar!!, menu!!, ThemeColor.accentColor(context))
-}
 
 /**
- * tint the menu, menu icon color is just white
- *
- * @param context context of toolbar's container
- * @param toolbar menu's container
- * @param menu    the menu to tint
+ * tint `CollapseIcon`, all `Icon` menu items, `SearchView`
  */
-internal fun setMenuColor_White(context: Context, toolbar: Toolbar?, menu: Menu?) {
-    setMenuColor(context, toolbar!!, menu!!, MaterialColor.White._1000.asColor)
-}
-
-/**
- * tint the menu, menu icon color is just black
- *
- * @param context context of toolbar's container
- * @param toolbar menu's container
- * @param menu    the menu to tint
- */
-internal fun setMenuColor_Black(context: Context, toolbar: Toolbar?, menu: Menu?) {
-    setMenuColor(context, toolbar!!, menu!!, MaterialColor.Black._1000.asColor)
-}
-
-fun tintMenu(toolbar: Toolbar, menu: Menu?, @ColorInt color: Int) {
-    if (toolbar.collapseIcon != null) {
-        toolbar.collapseIcon = createTintedDrawable(toolbar.collapseIcon!!, color)
-    }
-
+fun tintMenuActionIcons(toolbar: Toolbar, menu: Menu?, @ColorInt iconColor: Int) {
+    toolbar.tintCollapseIcon(iconColor)
     if (menu != null && menu.size() > 0) {
         for (i in 0 until menu.size()) {
             val item = menu.getItem(i)
             if (item.icon != null) {
-                item.icon = createTintedDrawable(item.icon!!, color)
+                item.icon = createTintedDrawable(item.icon!!, iconColor)
             }
             // Search view theming
-            if (item.actionView != null &&
-                (item.actionView is SearchView || item.actionView is SearchView)
-            ) {
-                setSearchViewContentColor(item.actionView as SearchView, color)
+            item.actionView?.let { v ->
+                when (v) {
+                    is SearchViewOS -> {
+                        setSearchViewContentColor(item.actionView as SearchViewOS, iconColor)
+                    }
+                    is SearchViewX -> {
+                        setSearchViewContentColor(item.actionView as SearchViewX, iconColor)
+                    }
+                }
             }
         }
     }
 }
-
-@JvmOverloads
-fun handleOnPrepareOptionsMenu(
-    activity: Activity,
-    toolbar: Toolbar?,
-    widgetColor: Int = ThemeColor.accentColor(activity)
-) = applyOverflowMenuTint(activity, toolbar, widgetColor)
 
 fun applyOverflowMenuTint(context: Context, toolbar: Toolbar?, @ColorInt color: Int) {
     toolbar?.post {
