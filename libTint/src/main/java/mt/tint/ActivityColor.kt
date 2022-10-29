@@ -13,9 +13,10 @@ import android.view.WindowInsetsController
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.Toolbar
 import mt.pref.ThemeColor
-import mt.tint.viewtint.setMenuColor_White
+import mt.tint.viewtint.setMenuColor
 import mt.tint.viewtint.setToolbarColorAuto
 import mt.util.color.isColorLight
+import mt.util.color.primaryTextColor
 import mt.util.color.stripAlpha
 
 fun Activity.setStatusbarColorAuto() =
@@ -70,6 +71,9 @@ fun Activity.requireLightStatusbar(enabled: Boolean) {
     }
 }
 
+/**
+ * use `navigationBarColor`
+ */
 fun Activity.setNavigationBarColorAuto() =
     setNavigationBarColor(
         ThemeColor.navigationBarColor(this)
@@ -114,18 +118,24 @@ fun Activity.requireLightNavigationBar(enabled: Boolean) {
     }
 }
 
+/**
+ * use `primaryColor`
+ */
 fun Activity.setActivityToolbarColorAuto(toolbar: Toolbar) =
     setActivityToolbarColor(
         toolbar,
         ThemeColor.primaryColor(this)
     )
 
-fun Activity.setActivityToolbarColor(toolbar: Toolbar, color: Int) {
-    toolbar.setBackgroundColor(color)
-    setMenuColor_White(this, toolbar, toolbar.menu)
-    setToolbarColorAuto(this, toolbar, null, color)
+fun Activity.setActivityToolbarColor(toolbar: Toolbar, backgroundColor: Int) {
+    toolbar.setBackgroundColor(backgroundColor)
+    setMenuColor(this, toolbar, toolbar.menu, primaryTextColor(backgroundColor))
+    setToolbarColorAuto(this, toolbar, null, backgroundColor)
 }
 
+/**
+ * use `primaryColor`
+ */
 fun Activity.setTaskDescriptionColorAuto() =
     setTaskDescriptionColor(ThemeColor.primaryColor(this))
 
