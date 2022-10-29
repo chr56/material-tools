@@ -8,7 +8,7 @@ import androidx.annotation.ColorInt
 
 @CheckResult
 @ColorInt
-fun toolbarContentColor(context: Context, @ColorInt toolbarColor: Int): Int {
+fun toolbarIconColor(context: Context, @ColorInt toolbarColor: Int): Int {
     return if (isColorLight(toolbarColor)) {
         toolbarSubtitleColor(context, toolbarColor)
     } else {
@@ -19,9 +19,9 @@ fun toolbarContentColor(context: Context, @ColorInt toolbarColor: Int): Int {
 @CheckResult
 @ColorInt
 fun toolbarSubtitleColor(context: Context, @ColorInt toolbarColor: Int) =
-    getSecondaryTextColor(context, isColorLight(toolbarColor))
+    context.primaryTextColor(toolbarColor)
 
 @CheckResult
 @ColorInt
 fun toolbarTitleColor(context: Context, @ColorInt toolbarColor: Int) =
-    getPrimaryTextColor(context, isColorLight(toolbarColor))
+    context.primaryTextColor(toolbarColor)

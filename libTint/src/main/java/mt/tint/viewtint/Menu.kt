@@ -37,17 +37,18 @@ import mt.util.drawable.createTintedDrawable
  *
  * @param context         context of toolbar's container
  * @param toolbar         menu's container
- * @param menu            the menu to tint
+ * @param menu            the menu to tint if using not toolbar's menu
  * @param menuWidgetColor menu icon color
  */
 @SuppressLint("RestrictedApi")
 fun setMenuColor(
     context: Context,
     toolbar: Toolbar,
-    menu: Menu,
+    menu: Menu?,
     @ColorInt menuWidgetColor: Int
 ) {
-    tintMenu(toolbar, menu, menuWidgetColor)
+    val actualMenu: Menu? = menu ?: toolbar.menu
+    tintMenu(toolbar, actualMenu, menuWidgetColor)
     applyOverflowMenuTint(context, toolbar, menuWidgetColor)
     if (context is Activity) {
         context.setOverflowButtonColor(menuWidgetColor)

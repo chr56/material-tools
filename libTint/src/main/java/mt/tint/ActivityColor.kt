@@ -14,7 +14,7 @@ import androidx.annotation.ColorInt
 import androidx.appcompat.widget.Toolbar
 import mt.pref.ThemeColor
 import mt.tint.viewtint.setMenuColor
-import mt.tint.viewtint.setToolbarColorAuto
+import mt.tint.viewtint.setToolbarTextColor
 import mt.util.color.isColorLight
 import mt.util.color.primaryTextColor
 import mt.util.color.stripAlpha
@@ -129,8 +129,8 @@ fun Activity.setActivityToolbarColorAuto(toolbar: Toolbar) =
 
 fun Activity.setActivityToolbarColor(toolbar: Toolbar, backgroundColor: Int) {
     toolbar.setBackgroundColor(backgroundColor)
+    setToolbarTextColor(this, toolbar, backgroundColor)
     setMenuColor(this, toolbar, toolbar.menu, primaryTextColor(backgroundColor))
-    setToolbarColorAuto(this, toolbar, null, backgroundColor)
 }
 
 /**
