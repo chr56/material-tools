@@ -58,7 +58,7 @@ dependencies {
     api(projects.libColorRes)
     compileOnly("androidx.appcompat:appcompat:1.5.1")
     compileOnly("androidx.preference:preference:1.2.0")
-//    compileOnly("com.google.android.material:material:1.4.0")
+//    compileOnly("com.google.android.material:material:1.6.1")
 }
 
 

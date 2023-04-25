@@ -52,7 +52,7 @@ dependencies {
     api(projects.libPref)
     api(projects.libColorRes)
     compileOnly("androidx.appcompat:appcompat:1.5.1")
-    compileOnly("com.google.android.material:material:1.4.0")
+    compileOnly("com.google.android.material:material:1.6.1")
 }
 
 publishing {
