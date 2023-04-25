@@ -57,7 +57,7 @@ android {
 dependencies {
     api(projects.libUtil)
     implementation("androidx.annotation:annotation:1.3.0")
-    compileOnly("androidx.appcompat:appcompat:1.3.1")
+    compileOnly("androidx.appcompat:appcompat:1.5.1")
     compileOnly("androidx.lifecycle:lifecycle-common-java8:2.3.1")
 }
 
