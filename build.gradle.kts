@@ -1,7 +1,8 @@
 plugins {
     val AGPVersion = "7.4.2"
     id("com.android.library") version AGPVersion apply false
-    id("org.jetbrains.kotlin.android") version "1.7.10" apply false
+    val kotlinVersion = "1.8.10"
+    id("org.jetbrains.kotlin.android") version kotlinVersion apply false
 }
 
 tasks.create(name = "clean", type = Delete::class) {
