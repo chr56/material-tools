@@ -127,3 +127,9 @@ object MonetColor {
         object NEUTRAL2 : TYPE()
     }
 }
+
+@RequiresApi(S)
+fun monetPrimaryColor(context: Context) = MonetColor.accent1Color(context, 300)
+
+@RequiresApi(S)
+fun monetAccentColor(context: Context) = MonetColor.accent2Color(context, 600)
