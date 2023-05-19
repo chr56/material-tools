@@ -60,6 +60,7 @@ android {
 dependencies {
     api(projects.libUtil)
     implementation("androidx.annotation:annotation:1.5.0")
+    implementation("androidx.appcompat:appcompat-resources:1.5.1")
     compileOnly("androidx.appcompat:appcompat:1.5.1")
     compileOnly("androidx.lifecycle:lifecycle-runtime-ktx:2.4.1")
 }
