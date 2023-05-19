@@ -61,6 +61,11 @@ class ThemeStore internal constructor(private val mContext: Context) {
         return this
     }
 
+    fun enableMonet(enable: Boolean): ThemeStore {
+        mEditor.putBoolean(KEY_ENABLE_MONET, enable)
+        return this
+    }
+
     fun markChanged() = mEditor.commit()
 
     fun commit() =

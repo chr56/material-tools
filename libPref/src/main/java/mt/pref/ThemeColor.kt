@@ -77,6 +77,10 @@ object ThemeColor {
         else Color.BLACK
     }
 
+    fun enableMonet(context: Context): Boolean {
+        return ThemeStore(context).pref.getBoolean(KEY_ENABLE_MONET, false)
+    }
+
     fun registerPreferenceChangeListener(
         l: ThemePreferenceChangeListener,
         appContext: Context,
