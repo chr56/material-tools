@@ -7,7 +7,6 @@ import android.os.Handler
 import android.os.Looper
 import androidx.annotation.CheckResult
 import androidx.annotation.ColorInt
-import androidx.appcompat.R
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import mt.pref.internal.ThemeStore
@@ -29,7 +28,7 @@ object ThemeColor {
     fun primaryColor(context: Context): Int {
         return ThemeStore(context).pref.getInt(
             KEY_PRIMARY_COLOR,
-            resolveColor(context, R.attr.colorPrimary, Color.parseColor("#455A64"))
+            resolveColor(context, androidx.appcompat.R.attr.colorPrimary, Color.parseColor("#455A64"))
         )
     }
 
@@ -43,7 +42,7 @@ object ThemeColor {
     fun accentColor(context: Context): Int {
         return ThemeStore(context).pref.getInt(
             KEY_ACCENT_COLOR,
-            resolveColor(context, R.attr.colorAccent, Color.parseColor("#263238"))
+            resolveColor(context, androidx.appcompat.R.attr.colorAccent, Color.parseColor("#263238"))
         )
     }
 
