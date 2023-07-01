@@ -10,32 +10,32 @@ object MonetColor {
 
     @RequiresApi(S)
     @ColorInt
-    fun accent1Color(context: Context, deep: Int): Int =
+    fun accent1Color(context: Context, @Depth deep: Int): Int =
         dynasticColor(context, ACCENT1, deep)
 
     @RequiresApi(S)
     @ColorInt
-    fun accent2Color(context: Context, deep: Int): Int =
+    fun accent2Color(context: Context, @Depth deep: Int): Int =
         dynasticColor(context, ACCENT2, deep)
 
     @RequiresApi(S)
     @ColorInt
-    fun accent3Color(context: Context, deep: Int): Int =
+    fun accent3Color(context: Context, @Depth deep: Int): Int =
         dynasticColor(context, ACCENT3, deep)
 
     @RequiresApi(S)
     @ColorInt
-    fun neutral1Color(context: Context, deep: Int): Int =
+    fun neutral1Color(context: Context, @Depth deep: Int): Int =
         dynasticColor(context, NEUTRAL1, deep)
 
     @RequiresApi(S)
     @ColorInt
-    fun neutral2Color(context: Context, deep: Int): Int =
+    fun neutral2Color(context: Context, @Depth deep: Int): Int =
         dynasticColor(context, NEUTRAL2, deep)
 
     @RequiresApi(S)
     @ColorInt
-    private fun dynasticColor(context: Context, @Type type: Int, deep: Int): Int {
+    private fun dynasticColor(context: Context, @Type type: Int, @Depth deep: Int): Int {
         return when (type) {
             ACCENT1 -> when (deep) {
                 0 -> context.getColor(android.R.color.system_accent1_0)
@@ -136,6 +136,12 @@ object MonetColor {
     @IntDef(ACCENT1, ACCENT2, ACCENT3, NEUTRAL1, NEUTRAL2)
     @Retention(AnnotationRetention.SOURCE)
     private annotation class Type
+
+
+    @IntDef(0, 10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000)
+    @Retention(AnnotationRetention.SOURCE)
+    private annotation class Depth
+
 }
 
 @RequiresApi(S)
