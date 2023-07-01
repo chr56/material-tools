@@ -28,7 +28,7 @@ object ThemeColor {
     fun primaryColor(context: Context): Int {
         return ThemeStore(context).pref.getInt(
             KEY_PRIMARY_COLOR,
-            resolveColor(context, androidx.appcompat.R.attr.colorPrimary, Color.parseColor("#455A64"))
+            resolveColor(context, androidx.appcompat.R.attr.colorPrimary, context.getColor(mt.color.R.color.md_blue_A400))
         )
     }
 
@@ -42,7 +42,7 @@ object ThemeColor {
     fun accentColor(context: Context): Int {
         return ThemeStore(context).pref.getInt(
             KEY_ACCENT_COLOR,
-            resolveColor(context, androidx.appcompat.R.attr.colorAccent, Color.parseColor("#263238"))
+            resolveColor(context, androidx.appcompat.R.attr.colorAccent, context.getColor(mt.color.R.color.md_yellow_900))
         )
     }
 
