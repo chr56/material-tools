@@ -12,7 +12,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import mt.color.MonetColor
+import mt.pref.internal.MonetColor
 import mt.pref.internal.ThemeStore
 import mt.util.color.resolveColor
 import mt.util.color.shiftColor

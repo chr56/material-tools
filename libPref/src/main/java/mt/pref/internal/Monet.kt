@@ -1,4 +1,4 @@
-package mt.color
+package mt.pref.internal
 
 import android.content.Context
 import android.os.Build.VERSION_CODES.S
