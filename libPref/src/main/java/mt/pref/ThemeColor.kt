@@ -23,14 +23,20 @@ object ThemeColor {
     fun edit(context: Context, block: ThemeStore.() -> Unit) =
         ThemeStore.edit(context).apply(block).commit()
 
+    fun enableMonet(context: Context): Boolean =
+        ThemeStore(context).pref.getBoolean(KEY_ENABLE_MONET, false)
+
     @CheckResult
     @ColorInt
-    fun primaryColor(context: Context): Int {
-        return ThemeStore(context).pref.getInt(
+    fun primaryColor(context: Context): Int =
+        ThemeStore(context).pref.getInt(
             KEY_PRIMARY_COLOR,
-            resolveColor(context, androidx.appcompat.R.attr.colorPrimary, context.getColor(mt.color.R.color.md_blue_A400))
+            resolveColor(
+                context,
+                androidx.appcompat.R.attr.colorPrimary,
+                context.getColor(mt.color.R.color.md_blue_A400)
+            )
         )
-    }
 
     @CheckResult
     @ColorInt
@@ -39,46 +45,37 @@ object ThemeColor {
 
     @CheckResult
     @ColorInt
-    fun accentColor(context: Context): Int {
-        return ThemeStore(context).pref.getInt(
+    fun accentColor(context: Context): Int =
+        ThemeStore(context).pref.getInt(
             KEY_ACCENT_COLOR,
-            resolveColor(context, androidx.appcompat.R.attr.colorAccent, context.getColor(mt.color.R.color.md_yellow_900))
+            resolveColor(
+                context,
+                androidx.appcompat.R.attr.colorAccent,
+                context.getColor(mt.color.R.color.md_yellow_900)
+            )
         )
-    }
 
     @CheckResult
-    fun coloredStatusBar(context: Context): Boolean {
-        return ThemeStore(context).pref.getBoolean(
-            KEY_APPLY_PRIMARYDARK_STATUSBAR,
-            true
+    fun coloredStatusBar(context: Context): Boolean =
+        ThemeStore(context).pref.getBoolean(
+            KEY_APPLY_PRIMARYDARK_STATUSBAR, true
         )
-    }
 
     @CheckResult
-    fun coloredNavigationBar(context: Context): Boolean {
-        return ThemeStore(context).pref.getBoolean(
-            KEY_APPLY_PRIMARY_NAVBAR,
-            false
+    fun coloredNavigationBar(context: Context): Boolean =
+        ThemeStore(context).pref.getBoolean(
+            KEY_APPLY_PRIMARY_NAVBAR, false
         )
-    }
 
     @CheckResult
     @ColorInt
-    fun navigationBarColor(context: Context): Int {
-        return if (coloredNavigationBar(context)) primaryColor(context)
-        else Color.BLACK
-    }
+    fun navigationBarColor(context: Context): Int =
+        if (coloredNavigationBar(context)) primaryColor(context) else Color.BLACK
 
     @CheckResult
     @ColorInt
-    fun statusBarColor(context: Context): Int {
-        return if (coloredStatusBar(context)) primaryColorDark(context)
-        else Color.BLACK
-    }
-
-    fun enableMonet(context: Context): Boolean {
-        return ThemeStore(context).pref.getBoolean(KEY_ENABLE_MONET, false)
-    }
+    fun statusBarColor(context: Context): Int =
+        if (coloredStatusBar(context)) primaryColorDark(context) else Color.BLACK
 
     fun registerPreferenceChangeListener(
         l: ThemePreferenceChangeListener,
@@ -96,12 +93,15 @@ object ThemeColor {
                                 when (key) {
                                     KEY_ACCENT_COLOR ->
                                         themeListener.onAccentColorChanged(accentColor(context))
+
                                     KEY_PRIMARY_COLOR ->
                                         themeListener.onPrimaryColorChanged(primaryColor(context))
+
                                     KEY_APPLY_PRIMARYDARK_STATUSBAR ->
                                         themeListener.onStatusBarTintSettingChanged(
                                             coloredStatusBar(context)
                                         )
+
                                     KEY_APPLY_PRIMARY_NAVBAR ->
                                         themeListener.onNavigationBarTintSettingChanged(
                                             coloredNavigationBar(context)
