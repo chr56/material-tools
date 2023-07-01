@@ -3,6 +3,7 @@ package mt.color
 import android.content.Context
 import android.os.Build.VERSION_CODES.S
 import androidx.annotation.ColorInt
+import androidx.annotation.IntDef
 import androidx.annotation.RequiresApi
 
 object MonetColor {
@@ -10,33 +11,33 @@ object MonetColor {
     @RequiresApi(S)
     @ColorInt
     fun accent1Color(context: Context, deep: Int): Int =
-        dynasticColor(context, TYPE.ACCENT1, deep)
+        dynasticColor(context, ACCENT1, deep)
 
     @RequiresApi(S)
     @ColorInt
     fun accent2Color(context: Context, deep: Int): Int =
-        dynasticColor(context, TYPE.ACCENT2, deep)
+        dynasticColor(context, ACCENT2, deep)
 
     @RequiresApi(S)
     @ColorInt
     fun accent3Color(context: Context, deep: Int): Int =
-        dynasticColor(context, TYPE.ACCENT3, deep)
+        dynasticColor(context, ACCENT3, deep)
 
     @RequiresApi(S)
     @ColorInt
     fun neutral1Color(context: Context, deep: Int): Int =
-        dynasticColor(context, TYPE.NEUTRAL1, deep)
+        dynasticColor(context, NEUTRAL1, deep)
 
     @RequiresApi(S)
     @ColorInt
     fun neutral2Color(context: Context, deep: Int): Int =
-        dynasticColor(context, TYPE.NEUTRAL2, deep)
+        dynasticColor(context, NEUTRAL2, deep)
 
     @RequiresApi(S)
     @ColorInt
-    private fun dynasticColor(context: Context, type: TYPE, deep: Int): Int {
+    private fun dynasticColor(context: Context, @Type type: Int, deep: Int): Int {
         return when (type) {
-            TYPE.ACCENT1 -> when (deep) {
+            ACCENT1 -> when (deep) {
                 0 -> context.getColor(android.R.color.system_accent1_0)
                 10 -> context.getColor(android.R.color.system_accent1_10)
                 50 -> context.getColor(android.R.color.system_accent1_50)
@@ -52,7 +53,8 @@ object MonetColor {
                 1000 -> context.getColor(android.R.color.system_accent1_1000)
                 else -> -1
             }
-            TYPE.ACCENT2 -> when (deep) {
+
+            ACCENT2 -> when (deep) {
                 0 -> context.getColor(android.R.color.system_accent2_0)
                 10 -> context.getColor(android.R.color.system_accent2_10)
                 50 -> context.getColor(android.R.color.system_accent2_50)
@@ -68,7 +70,8 @@ object MonetColor {
                 1000 -> context.getColor(android.R.color.system_accent2_1000)
                 else -> -1
             }
-            TYPE.ACCENT3 -> when (deep) {
+
+            ACCENT3 -> when (deep) {
                 0 -> context.getColor(android.R.color.system_accent3_0)
                 10 -> context.getColor(android.R.color.system_accent3_10)
                 50 -> context.getColor(android.R.color.system_accent3_50)
@@ -84,7 +87,8 @@ object MonetColor {
                 1000 -> context.getColor(android.R.color.system_accent3_1000)
                 else -> -1
             }
-            TYPE.NEUTRAL1 -> when (deep) {
+
+            NEUTRAL1 -> when (deep) {
                 0 -> context.getColor(android.R.color.system_neutral1_0)
                 10 -> context.getColor(android.R.color.system_neutral1_10)
                 50 -> context.getColor(android.R.color.system_neutral1_50)
@@ -100,7 +104,8 @@ object MonetColor {
                 1000 -> context.getColor(android.R.color.system_neutral1_1000)
                 else -> -1
             }
-            TYPE.NEUTRAL2 -> when (deep) {
+
+            NEUTRAL2 -> when (deep) {
                 0 -> context.getColor(android.R.color.system_neutral2_0)
                 10 -> context.getColor(android.R.color.system_neutral2_10)
                 50 -> context.getColor(android.R.color.system_neutral2_50)
@@ -116,16 +121,21 @@ object MonetColor {
                 1000 -> context.getColor(android.R.color.system_neutral2_1000)
                 else -> -1
             }
+
+            else -> -1
         }
     }
 
-    private sealed class TYPE {
-        object ACCENT1 : TYPE()
-        object ACCENT2 : TYPE()
-        object ACCENT3 : TYPE()
-        object NEUTRAL1 : TYPE()
-        object NEUTRAL2 : TYPE()
-    }
+    private const val ACCENT1 = 2
+    private const val ACCENT2 = 4
+    private const val ACCENT3 = 8
+    private const val NEUTRAL1 = 16
+    private const val NEUTRAL2 = 32
+
+
+    @IntDef(ACCENT1, ACCENT2, ACCENT3, NEUTRAL1, NEUTRAL2)
+    @Retention(AnnotationRetention.SOURCE)
+    private annotation class Type
 }
 
 @RequiresApi(S)
