@@ -38,87 +38,87 @@ object MonetColor {
     private fun dynasticColor(context: Context, @Type type: Int, @Depth deep: Int): Int {
         return when (type) {
             ACCENT1 -> when (deep) {
-                0 -> context.getColor(android.R.color.system_accent1_0)
-                10 -> context.getColor(android.R.color.system_accent1_10)
-                50 -> context.getColor(android.R.color.system_accent1_50)
-                100 -> context.getColor(android.R.color.system_accent1_100)
-                200 -> context.getColor(android.R.color.system_accent1_200)
-                300 -> context.getColor(android.R.color.system_accent1_300)
-                400 -> context.getColor(android.R.color.system_accent1_400)
-                500 -> context.getColor(android.R.color.system_accent1_500)
-                600 -> context.getColor(android.R.color.system_accent1_600)
-                700 -> context.getColor(android.R.color.system_accent1_700)
-                800 -> context.getColor(android.R.color.system_accent1_800)
-                900 -> context.getColor(android.R.color.system_accent1_900)
-                1000 -> context.getColor(android.R.color.system_accent1_1000)
+                DEPTH_0 -> context.getColor(android.R.color.system_accent1_0)
+                DEPTH_10 -> context.getColor(android.R.color.system_accent1_10)
+                DEPTH_50 -> context.getColor(android.R.color.system_accent1_50)
+                DEPTH_100 -> context.getColor(android.R.color.system_accent1_100)
+                DEPTH_200 -> context.getColor(android.R.color.system_accent1_200)
+                DEPTH_300 -> context.getColor(android.R.color.system_accent1_300)
+                DEPTH_400 -> context.getColor(android.R.color.system_accent1_400)
+                DEPTH_500 -> context.getColor(android.R.color.system_accent1_500)
+                DEPTH_600 -> context.getColor(android.R.color.system_accent1_600)
+                DEPTH_700 -> context.getColor(android.R.color.system_accent1_700)
+                DEPTH_800 -> context.getColor(android.R.color.system_accent1_800)
+                DEPTH_900 -> context.getColor(android.R.color.system_accent1_900)
+                DEPTH_1000 -> context.getColor(android.R.color.system_accent1_1000)
                 else -> -1
             }
 
             ACCENT2 -> when (deep) {
-                0 -> context.getColor(android.R.color.system_accent2_0)
-                10 -> context.getColor(android.R.color.system_accent2_10)
-                50 -> context.getColor(android.R.color.system_accent2_50)
-                100 -> context.getColor(android.R.color.system_accent2_100)
-                200 -> context.getColor(android.R.color.system_accent2_200)
-                300 -> context.getColor(android.R.color.system_accent2_300)
-                400 -> context.getColor(android.R.color.system_accent2_400)
-                500 -> context.getColor(android.R.color.system_accent2_500)
-                600 -> context.getColor(android.R.color.system_accent2_600)
-                700 -> context.getColor(android.R.color.system_accent2_700)
-                800 -> context.getColor(android.R.color.system_accent2_800)
-                900 -> context.getColor(android.R.color.system_accent2_900)
-                1000 -> context.getColor(android.R.color.system_accent2_1000)
+                DEPTH_0 -> context.getColor(android.R.color.system_accent2_0)
+                DEPTH_10 -> context.getColor(android.R.color.system_accent2_10)
+                DEPTH_50 -> context.getColor(android.R.color.system_accent2_50)
+                DEPTH_100 -> context.getColor(android.R.color.system_accent2_100)
+                DEPTH_200 -> context.getColor(android.R.color.system_accent2_200)
+                DEPTH_300 -> context.getColor(android.R.color.system_accent2_300)
+                DEPTH_400 -> context.getColor(android.R.color.system_accent2_400)
+                DEPTH_500 -> context.getColor(android.R.color.system_accent2_500)
+                DEPTH_600 -> context.getColor(android.R.color.system_accent2_600)
+                DEPTH_700 -> context.getColor(android.R.color.system_accent2_700)
+                DEPTH_800 -> context.getColor(android.R.color.system_accent2_800)
+                DEPTH_900 -> context.getColor(android.R.color.system_accent2_900)
+                DEPTH_1000 -> context.getColor(android.R.color.system_accent2_1000)
                 else -> -1
             }
 
             ACCENT3 -> when (deep) {
-                0 -> context.getColor(android.R.color.system_accent3_0)
-                10 -> context.getColor(android.R.color.system_accent3_10)
-                50 -> context.getColor(android.R.color.system_accent3_50)
-                100 -> context.getColor(android.R.color.system_accent3_100)
-                200 -> context.getColor(android.R.color.system_accent3_200)
-                300 -> context.getColor(android.R.color.system_accent3_300)
-                400 -> context.getColor(android.R.color.system_accent3_400)
-                500 -> context.getColor(android.R.color.system_accent3_500)
-                600 -> context.getColor(android.R.color.system_accent3_600)
-                700 -> context.getColor(android.R.color.system_accent3_700)
-                800 -> context.getColor(android.R.color.system_accent3_800)
-                900 -> context.getColor(android.R.color.system_accent3_900)
-                1000 -> context.getColor(android.R.color.system_accent3_1000)
+                DEPTH_0 -> context.getColor(android.R.color.system_accent3_0)
+                DEPTH_10 -> context.getColor(android.R.color.system_accent3_10)
+                DEPTH_50 -> context.getColor(android.R.color.system_accent3_50)
+                DEPTH_100 -> context.getColor(android.R.color.system_accent3_100)
+                DEPTH_200 -> context.getColor(android.R.color.system_accent3_200)
+                DEPTH_300 -> context.getColor(android.R.color.system_accent3_300)
+                DEPTH_400 -> context.getColor(android.R.color.system_accent3_400)
+                DEPTH_500 -> context.getColor(android.R.color.system_accent3_500)
+                DEPTH_600 -> context.getColor(android.R.color.system_accent3_600)
+                DEPTH_700 -> context.getColor(android.R.color.system_accent3_700)
+                DEPTH_800 -> context.getColor(android.R.color.system_accent3_800)
+                DEPTH_900 -> context.getColor(android.R.color.system_accent3_900)
+                DEPTH_1000 -> context.getColor(android.R.color.system_accent3_1000)
                 else -> -1
             }
 
             NEUTRAL1 -> when (deep) {
-                0 -> context.getColor(android.R.color.system_neutral1_0)
-                10 -> context.getColor(android.R.color.system_neutral1_10)
-                50 -> context.getColor(android.R.color.system_neutral1_50)
-                100 -> context.getColor(android.R.color.system_neutral1_100)
-                200 -> context.getColor(android.R.color.system_neutral1_200)
-                300 -> context.getColor(android.R.color.system_neutral1_300)
-                400 -> context.getColor(android.R.color.system_neutral1_400)
-                500 -> context.getColor(android.R.color.system_neutral1_500)
-                600 -> context.getColor(android.R.color.system_neutral1_600)
-                700 -> context.getColor(android.R.color.system_neutral1_700)
-                800 -> context.getColor(android.R.color.system_neutral1_800)
-                900 -> context.getColor(android.R.color.system_neutral1_900)
-                1000 -> context.getColor(android.R.color.system_neutral1_1000)
+                DEPTH_0 -> context.getColor(android.R.color.system_neutral1_0)
+                DEPTH_10 -> context.getColor(android.R.color.system_neutral1_10)
+                DEPTH_50 -> context.getColor(android.R.color.system_neutral1_50)
+                DEPTH_100 -> context.getColor(android.R.color.system_neutral1_100)
+                DEPTH_200 -> context.getColor(android.R.color.system_neutral1_200)
+                DEPTH_300 -> context.getColor(android.R.color.system_neutral1_300)
+                DEPTH_400 -> context.getColor(android.R.color.system_neutral1_400)
+                DEPTH_500 -> context.getColor(android.R.color.system_neutral1_500)
+                DEPTH_600 -> context.getColor(android.R.color.system_neutral1_600)
+                DEPTH_700 -> context.getColor(android.R.color.system_neutral1_700)
+                DEPTH_800 -> context.getColor(android.R.color.system_neutral1_800)
+                DEPTH_900 -> context.getColor(android.R.color.system_neutral1_900)
+                DEPTH_1000 -> context.getColor(android.R.color.system_neutral1_1000)
                 else -> -1
             }
 
             NEUTRAL2 -> when (deep) {
-                0 -> context.getColor(android.R.color.system_neutral2_0)
-                10 -> context.getColor(android.R.color.system_neutral2_10)
-                50 -> context.getColor(android.R.color.system_neutral2_50)
-                100 -> context.getColor(android.R.color.system_neutral2_100)
-                200 -> context.getColor(android.R.color.system_neutral2_200)
-                300 -> context.getColor(android.R.color.system_neutral2_300)
-                400 -> context.getColor(android.R.color.system_neutral2_400)
-                500 -> context.getColor(android.R.color.system_neutral2_500)
-                600 -> context.getColor(android.R.color.system_neutral2_600)
-                700 -> context.getColor(android.R.color.system_neutral2_700)
-                800 -> context.getColor(android.R.color.system_neutral2_800)
-                900 -> context.getColor(android.R.color.system_neutral2_900)
-                1000 -> context.getColor(android.R.color.system_neutral2_1000)
+                DEPTH_0 -> context.getColor(android.R.color.system_neutral2_0)
+                DEPTH_10 -> context.getColor(android.R.color.system_neutral2_10)
+                DEPTH_50 -> context.getColor(android.R.color.system_neutral2_50)
+                DEPTH_100 -> context.getColor(android.R.color.system_neutral2_100)
+                DEPTH_200 -> context.getColor(android.R.color.system_neutral2_200)
+                DEPTH_300 -> context.getColor(android.R.color.system_neutral2_300)
+                DEPTH_400 -> context.getColor(android.R.color.system_neutral2_400)
+                DEPTH_500 -> context.getColor(android.R.color.system_neutral2_500)
+                DEPTH_600 -> context.getColor(android.R.color.system_neutral2_600)
+                DEPTH_700 -> context.getColor(android.R.color.system_neutral2_700)
+                DEPTH_800 -> context.getColor(android.R.color.system_neutral2_800)
+                DEPTH_900 -> context.getColor(android.R.color.system_neutral2_900)
+                DEPTH_1000 -> context.getColor(android.R.color.system_neutral2_1000)
                 else -> -1
             }
 
@@ -138,14 +138,42 @@ object MonetColor {
     private annotation class Type
 
 
-    @IntDef(0, 10, 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000)
+    @IntDef(
+        DEPTH_0,
+        DEPTH_10,
+        DEPTH_50,
+        DEPTH_100,
+        DEPTH_200,
+        DEPTH_300,
+        DEPTH_400,
+        DEPTH_500,
+        DEPTH_600,
+        DEPTH_700,
+        DEPTH_800,
+        DEPTH_900,
+        DEPTH_1000,
+    )
     @Retention(AnnotationRetention.SOURCE)
     private annotation class Depth
+
+    const val DEPTH_0 = 0
+    const val DEPTH_10 = 10
+    const val DEPTH_50 = 50
+    const val DEPTH_100 = 100
+    const val DEPTH_200 = 200
+    const val DEPTH_300 = 300
+    const val DEPTH_400 = 400
+    const val DEPTH_500 = 500
+    const val DEPTH_600 = 600
+    const val DEPTH_700 = 700
+    const val DEPTH_800 = 800
+    const val DEPTH_900 = 900
+    const val DEPTH_1000 = 1000
 
 }
 
 @RequiresApi(S)
-fun monetPrimaryColor(context: Context) = MonetColor.accent1Color(context, 300)
+fun monetPrimaryColor(context: Context) = MonetColor.accent1Color(context, MonetColor.DEPTH_400)
 
 @RequiresApi(S)
-fun monetAccentColor(context: Context) = MonetColor.accent2Color(context, 600)
+fun monetAccentColor(context: Context) = MonetColor.accent2Color(context, MonetColor.DEPTH_700)
