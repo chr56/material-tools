@@ -171,9 +171,3 @@ object MonetColor {
     const val DEPTH_1000 = 1000
 
 }
-
-@RequiresApi(S)
-fun monetPrimaryColor(context: Context) = MonetColor.accent1Color(context, MonetColor.DEPTH_400)
-
-@RequiresApi(S)
-fun monetAccentColor(context: Context) = MonetColor.accent2Color(context, MonetColor.DEPTH_700)

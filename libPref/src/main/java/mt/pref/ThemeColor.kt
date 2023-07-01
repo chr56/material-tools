@@ -9,10 +9,10 @@ import android.os.Handler
 import android.os.Looper
 import androidx.annotation.CheckResult
 import androidx.annotation.ColorInt
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import mt.color.monetAccentColor
-import mt.color.monetPrimaryColor
+import mt.color.MonetColor
 import mt.pref.internal.ThemeStore
 import mt.util.color.resolveColor
 import mt.util.color.shiftColor
@@ -136,4 +136,11 @@ object ThemeColor {
         fun onStatusBarTintSettingChanged(coloredStatusBar: Boolean)
         fun onNavigationBarTintSettingChanged(coloredNavigationBar: Boolean)
     }
+
+
+    @RequiresApi(S)
+    fun monetPrimaryColor(context: Context) = MonetColor.accent1Color(context, MonetColor.DEPTH_400)
+
+    @RequiresApi(S)
+    fun monetAccentColor(context: Context) = MonetColor.accent2Color(context, MonetColor.DEPTH_700)
 }
