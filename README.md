@@ -16,20 +16,16 @@ This is a kotlin library now.
 ```groovy
 dependencies {
     // mdColorRes: most material color values resource (non-kotlin)
-    implementation("com.github.chr56.material-tools:mdColorRes:0.0.8")
+    implementation("com.github.chr56.material-tools:mdColorRes:0.1.0")
     // mdUtil: utility
-    implementation("com.github.chr56.material-tools:mdUtil:0.0.8")
+    implementation("com.github.chr56.material-tools:mdUtil:0.1.0")
     // mdPref: make preferences to store theme color
-    implementation("com.github.chr56.material-tools:mdPref:0.0.8")
+    implementation("com.github.chr56.material-tools:mdPref:0.1.0")
     // mdTint: tint the Views
-    implementation("com.github.chr56.material-tools:mdTint:0.0.8")
+    implementation("com.github.chr56.material-tools:mdTint:0.1.0")
     // mdTView: [experimental] self tinted views
-    // implementation("com.github.chr56.material-tools:mdView:0.0.8")
+    // implementation("com.github.chr56.material-tools:mdView:0.1.0")
 
-    // also, you need to add `appcompat` manually
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    // if you are not using lifecycle 2.4.0 and need listening preference changes in mdPref
-    implementation("androidx.lifecycle:lifecycle-common-java8:2.3.1")
     // and Google material design library if you use mdTint
     implementation("com.google.android.material:material:1.4.0")
 }
