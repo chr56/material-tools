@@ -3,12 +3,16 @@ package mt.pref
 import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
+import android.os.Build.VERSION.SDK_INT
+import android.os.Build.VERSION_CODES.S
 import android.os.Handler
 import android.os.Looper
 import androidx.annotation.CheckResult
 import androidx.annotation.ColorInt
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import mt.color.monetAccentColor
+import mt.color.monetPrimaryColor
 import mt.pref.internal.ThemeStore
 import mt.util.color.resolveColor
 import mt.util.color.shiftColor
@@ -29,14 +33,16 @@ object ThemeColor {
     @CheckResult
     @ColorInt
     fun primaryColor(context: Context): Int =
-        ThemeStore(context).pref.getInt(
-            KEY_PRIMARY_COLOR,
-            resolveColor(
-                context,
-                androidx.appcompat.R.attr.colorPrimary,
-                context.getColor(mt.color.R.color.md_blue_A400)
+        if (!enableMonet(context) || SDK_INT < S)
+            ThemeStore(context).pref.getInt(
+                KEY_PRIMARY_COLOR,
+                resolveColor(
+                    context,
+                    androidx.appcompat.R.attr.colorPrimary,
+                    context.getColor(mt.color.R.color.md_blue_A400)
+                )
             )
-        )
+        else monetPrimaryColor(context)
 
     @CheckResult
     @ColorInt
@@ -46,14 +52,16 @@ object ThemeColor {
     @CheckResult
     @ColorInt
     fun accentColor(context: Context): Int =
-        ThemeStore(context).pref.getInt(
-            KEY_ACCENT_COLOR,
-            resolveColor(
-                context,
-                androidx.appcompat.R.attr.colorAccent,
-                context.getColor(mt.color.R.color.md_yellow_900)
+        if (!enableMonet(context) || SDK_INT < S)
+            ThemeStore(context).pref.getInt(
+                KEY_ACCENT_COLOR,
+                resolveColor(
+                    context,
+                    androidx.appcompat.R.attr.colorAccent,
+                    context.getColor(mt.color.R.color.md_yellow_900)
+                )
             )
-        )
+        else monetAccentColor(context)
 
     @CheckResult
     fun coloredStatusBar(context: Context): Boolean =
