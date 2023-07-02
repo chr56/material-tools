@@ -10,6 +10,9 @@ import androidx.annotation.ColorRes
 import androidx.annotation.IntRange
 import androidx.core.content.ContextCompat
 import mt.pref.*
+import mt.pref.internal.MonetColor.Depth
+import mt.pref.internal.MonetColor.MonetColorPalette
+import mt.pref.internal.MonetColor.Type
 import mt.util.color.resolveColor
 
 /**
@@ -63,6 +66,22 @@ class ThemeStore internal constructor(private val mContext: Context) {
 
     fun enableMonet(enable: Boolean): ThemeStore {
         mEditor.putBoolean(KEY_ENABLE_MONET, enable)
+        return this
+    }
+
+    fun preferredMonetPrimaryColor(
+        @Type type: Int,
+        @Depth depth: Int
+    ): ThemeStore {
+        mEditor.putInt(KEY_MONET_PRIMARY_COLOR, MonetColorPalette(type, depth).value)
+        return this
+    }
+
+    fun preferredMonetAccentColor(
+        @Type type: Int,
+        @Depth depth: Int
+    ): ThemeStore {
+        mEditor.putInt(KEY_MONET_ACCENT_COLOR, MonetColorPalette(type, depth).value)
         return this
     }
 

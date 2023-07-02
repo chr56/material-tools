@@ -12,7 +12,9 @@ import androidx.annotation.ColorInt
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import mt.pref.internal.MonetColor
+import mt.pref.internal.MonetColor.MonetColorPalette
+import mt.pref.internal.MonetColor.defaultMonetAccentColor
+import mt.pref.internal.MonetColor.defaultMonetPrimaryColor
 import mt.pref.internal.ThemeStore
 import mt.util.color.resolveColor
 import mt.util.color.shiftColor
@@ -42,7 +44,7 @@ object ThemeColor {
                     context.getColor(mt.color.R.color.md_blue_A400)
                 )
             )
-        else monetPrimaryColor(context)
+        else preferredMonetPrimaryColor(context)
 
     @CheckResult
     @ColorInt
@@ -61,7 +63,7 @@ object ThemeColor {
                     context.getColor(mt.color.R.color.md_yellow_900)
                 )
             )
-        else monetAccentColor(context)
+        else preferredMonetAccentColor(context)
 
     @CheckResult
     fun coloredStatusBar(context: Context): Boolean =
@@ -84,6 +86,18 @@ object ThemeColor {
     @ColorInt
     fun statusBarColor(context: Context): Int =
         if (coloredStatusBar(context)) primaryColorDark(context) else Color.BLACK
+
+    @RequiresApi(S)
+    fun preferredMonetPrimaryColor(context: Context) =
+        MonetColorPalette(
+            ThemeStore(context).pref.getInt(KEY_MONET_PRIMARY_COLOR, defaultMonetPrimaryColor.value)
+        ).color(context)
+
+    @RequiresApi(S)
+    fun preferredMonetAccentColor(context: Context) =
+        MonetColorPalette(
+            ThemeStore(context).pref.getInt(KEY_MONET_ACCENT_COLOR, defaultMonetAccentColor.value)
+        ).color(context)
 
     fun registerPreferenceChangeListener(
         l: ThemePreferenceChangeListener,
@@ -138,9 +152,4 @@ object ThemeColor {
     }
 
 
-    @RequiresApi(S)
-    fun monetPrimaryColor(context: Context) = MonetColor.accent1Color(context, MonetColor.DEPTH_400)
-
-    @RequiresApi(S)
-    fun monetAccentColor(context: Context) = MonetColor.accent2Color(context, MonetColor.DEPTH_700)
 }

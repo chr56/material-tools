@@ -24,3 +24,6 @@ internal const val KEY_APPLY_PRIMARY_NAVBAR = "apply_primary_navbar"
 // internal const val KEY_TEXT_COLOR_SECONDARY_INVERSE = "text_color_secondary_inverse"
 
 internal const val KEY_ENABLE_MONET = "enable_monet"
+
+internal const val KEY_MONET_PRIMARY_COLOR = "monet_primary_color"
+internal const val KEY_MONET_ACCENT_COLOR = "monet_accent_color"
