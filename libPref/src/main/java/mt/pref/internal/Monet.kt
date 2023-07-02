@@ -135,7 +135,7 @@ object MonetColor {
 
     @IntDef(ACCENT1, ACCENT2, ACCENT3, NEUTRAL1, NEUTRAL2)
     @Retention(AnnotationRetention.SOURCE)
-    private annotation class Type
+    annotation class Type
 
 
     @IntDef(
@@ -154,7 +154,7 @@ object MonetColor {
         DEPTH_1000,
     )
     @Retention(AnnotationRetention.SOURCE)
-    private annotation class Depth
+    annotation class Depth
 
     const val DEPTH_0 = 0
     const val DEPTH_10 = 10
