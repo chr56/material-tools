@@ -126,11 +126,11 @@ object MonetColor {
         }
     }
 
-    private const val ACCENT1 = 2
-    private const val ACCENT2 = 4
-    private const val ACCENT3 = 8
-    private const val NEUTRAL1 = 16
-    private const val NEUTRAL2 = 32
+    const val ACCENT1 = 2
+    const val ACCENT2 = 4
+    const val ACCENT3 = 8
+    const val NEUTRAL1 = 16
+    const val NEUTRAL2 = 32
 
 
     @IntDef(ACCENT1, ACCENT2, ACCENT3, NEUTRAL1, NEUTRAL2)
@@ -185,5 +185,8 @@ object MonetColor {
             private const val SHIFT = 16
         }
     }
+
+    val defaultMonetPrimaryColor get() = MonetColorPalette(ACCENT1, DEPTH_400)
+    val defaultMonetAccentColor get() = MonetColorPalette(ACCENT1, DEPTH_700)
 
 }
