@@ -170,4 +170,20 @@ object MonetColor {
     const val DEPTH_900 = 900
     const val DEPTH_1000 = 1000
 
+    @JvmInline
+    value class MonetColorPalette internal constructor(internal val value: Int) {
+        constructor(@Type type: Int, @Depth depth: Int) : this(type shl SHIFT + depth)
+
+        val type: Int @get:Type get() = value ushr SHIFT
+        val depth: Int @get:Depth get() = value shl SHIFT ushr SHIFT
+
+        @RequiresApi(S)
+        @ColorInt
+        fun color(context: Context): Int = dynasticColor(context, type, depth)
+
+        companion object {
+            private const val SHIFT = 16
+        }
+    }
+
 }
