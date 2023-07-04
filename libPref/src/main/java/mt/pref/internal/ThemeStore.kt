@@ -82,6 +82,7 @@ class ThemeStore internal constructor(private val mContext: Context) {
         @Depth depth: Int
     ): ThemeStore {
         mEditor.putInt(KEY_MONET_ACCENT_COLOR, MonetColorPalette(type, depth).value)
+        ThemeColor.updateCachedColor(mContext)
         return this
     }
 
@@ -90,11 +91,13 @@ class ThemeStore internal constructor(private val mContext: Context) {
     fun commit() =
         mEditor.putLong(VALUES_CHANGED, System.currentTimeMillis())
             .putBoolean(IS_CONFIGURED_KEY, true)
+            .also { ThemeColor.updateCachedColor(mContext) }
             .commit()
 
     fun apply() =
         mEditor.putLong(VALUES_CHANGED, System.currentTimeMillis())
             .putBoolean(IS_CONFIGURED_KEY, true)
+            .also { ThemeColor.updateCachedColor(mContext) }
             .apply()
 
     /**
@@ -136,6 +139,6 @@ class ThemeStore internal constructor(private val mContext: Context) {
         @SuppressLint("CommitPrefEdits")
         fun didThemeValuesChange(context: Context, since: Long): Boolean =
             isConfigured(context) &&
-                ThemeStore(context).pref.getLong(VALUES_CHANGED, -1) > since
+                    ThemeStore(context).pref.getLong(VALUES_CHANGED, -1) > since
     }
 }

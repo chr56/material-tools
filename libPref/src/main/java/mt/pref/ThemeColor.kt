@@ -16,7 +16,6 @@ import mt.pref.internal.MonetColor.MonetColorPalette
 import mt.pref.internal.MonetColor.defaultMonetAccentColor
 import mt.pref.internal.MonetColor.defaultMonetPrimaryColor
 import mt.pref.internal.ThemeStore
-import mt.util.color.resolveColor
 import mt.util.color.shiftColor
 
 /**
@@ -35,12 +34,7 @@ object ThemeColor {
     @CheckResult
     @ColorInt
     fun primaryColor(context: Context): Int =
-        if (!enableMonet(context) || SDK_INT < S)
-            ThemeStore(context).pref.getInt(
-                KEY_PRIMARY_COLOR,
-                context.getColor(mt.color.R.color.md_blue_A400)
-            )
-        else preferredMonetPrimaryColor(context)
+        if (cachedPrimaryColor < 0) updateCachedPrimaryColor(context) else cachedPrimaryColor
 
     @CheckResult
     @ColorInt
@@ -50,12 +44,7 @@ object ThemeColor {
     @CheckResult
     @ColorInt
     fun accentColor(context: Context): Int =
-        if (!enableMonet(context) || SDK_INT < S)
-            ThemeStore(context).pref.getInt(
-                KEY_ACCENT_COLOR,
-                context.getColor(mt.color.R.color.md_yellow_900)
-            )
-        else preferredMonetAccentColor(context)
+        if (cachedAccentColor < 0) updateCachedAccentColor(context) else cachedAccentColor
 
     @CheckResult
     fun coloredStatusBar(context: Context): Boolean =
@@ -90,6 +79,50 @@ object ThemeColor {
         MonetColorPalette(
             ThemeStore(context).pref.getInt(KEY_MONET_ACCENT_COLOR, defaultMonetAccentColor.value)
         ).color(context)
+
+
+    @get:ColorInt
+    internal var cachedPrimaryColor: Int = -1
+
+    @get:ColorInt
+    internal var cachedAccentColor: Int = -1
+
+    @ColorInt
+    internal fun updateCachedPrimaryColor(context: Context): Int {
+        val pref = ThemeStore(context).pref
+        val primaryColor =
+            if (SDK_INT >= S && pref.getBoolean(KEY_ENABLE_MONET, false)) {
+                preferredMonetPrimaryColor(context)
+            } else {
+                pref.getInt(
+                    KEY_PRIMARY_COLOR,
+                    context.getColor(mt.color.R.color.md_blue_A400)
+                )
+            }
+        cachedPrimaryColor = primaryColor
+        return primaryColor
+    }
+
+    @ColorInt
+    internal fun updateCachedAccentColor(context: Context): Int {
+        val pref = ThemeStore(context).pref
+        val accentColor =
+            if (SDK_INT >= S && pref.getBoolean(KEY_ENABLE_MONET, false)) {
+                preferredMonetAccentColor(context)
+            } else {
+                pref.getInt(
+                    KEY_ACCENT_COLOR,
+                    context.getColor(mt.color.R.color.md_yellow_900)
+                )
+            }
+        cachedAccentColor = accentColor
+        return accentColor
+    }
+
+    internal fun updateCachedColor(context: Context) {
+        updateCachedPrimaryColor(context)
+        updateCachedAccentColor(context)
+    }
 
     fun registerPreferenceChangeListener(
         l: ThemePreferenceChangeListener,
