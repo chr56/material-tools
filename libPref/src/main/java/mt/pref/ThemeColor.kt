@@ -38,11 +38,7 @@ object ThemeColor {
         if (!enableMonet(context) || SDK_INT < S)
             ThemeStore(context).pref.getInt(
                 KEY_PRIMARY_COLOR,
-                resolveColor(
-                    context,
-                    androidx.appcompat.R.attr.colorPrimary,
-                    context.getColor(mt.color.R.color.md_blue_A400)
-                )
+                context.getColor(mt.color.R.color.md_blue_A400)
             )
         else preferredMonetPrimaryColor(context)
 
@@ -57,11 +53,7 @@ object ThemeColor {
         if (!enableMonet(context) || SDK_INT < S)
             ThemeStore(context).pref.getInt(
                 KEY_ACCENT_COLOR,
-                resolveColor(
-                    context,
-                    androidx.appcompat.R.attr.colorAccent,
-                    context.getColor(mt.color.R.color.md_yellow_900)
-                )
+                context.getColor(mt.color.R.color.md_yellow_900)
             )
         else preferredMonetAccentColor(context)
 
