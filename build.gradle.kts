@@ -8,4 +8,4 @@ plugins {
 tasks.create(name = "clean", type = Delete::class) {
     doLast { delete(rootProject.buildDir) }
 }
-val libVersion: String by extra("0.1.0")
+val libVersion: String by extra("0.2.0-dev1")
