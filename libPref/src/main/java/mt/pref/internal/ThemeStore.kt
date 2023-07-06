@@ -20,9 +20,9 @@ import mt.util.color.resolveColor
  * @author Aidan Follestad (afollestad), Karim Abou Zeid (kabouzeid), che_56 (modified)
  */
 @Suppress("unused")
-class ThemeStore internal constructor(private val mContext: Context) {
+class ThemeStore internal constructor(private val context: Context) {
 
-    internal val pref: SharedPreferences = mContext.getSharedPreferences(
+    internal val pref: SharedPreferences = context.getSharedPreferences(
         CONFIG_PREFS_KEY_DEFAULT,
         Context.MODE_PRIVATE
     )
@@ -34,11 +34,11 @@ class ThemeStore internal constructor(private val mContext: Context) {
     }
 
     fun primaryColorRes(@ColorRes colorRes: Int): ThemeStore {
-        return primaryColor(ContextCompat.getColor(mContext, colorRes))
+        return primaryColor(ContextCompat.getColor(context, colorRes))
     }
 
     fun primaryColorAttr(@AttrRes colorAttr: Int): ThemeStore {
-        return primaryColor(resolveColor(mContext, colorAttr))
+        return primaryColor(resolveColor(context, colorAttr))
     }
 
     fun accentColor(@ColorInt color: Int): ThemeStore {
@@ -47,11 +47,11 @@ class ThemeStore internal constructor(private val mContext: Context) {
     }
 
     fun accentColorRes(@ColorRes colorRes: Int): ThemeStore {
-        return accentColor(ContextCompat.getColor(mContext, colorRes))
+        return accentColor(ContextCompat.getColor(context, colorRes))
     }
 
     fun accentColorAttr(@AttrRes colorAttr: Int): ThemeStore {
-        return accentColor(resolveColor(mContext, colorAttr))
+        return accentColor(resolveColor(context, colorAttr))
     }
 
     fun coloredStatusBar(colored: Boolean): ThemeStore {
@@ -82,7 +82,7 @@ class ThemeStore internal constructor(private val mContext: Context) {
         @Depth depth: Int
     ): ThemeStore {
         mEditor.putInt(KEY_MONET_ACCENT_COLOR, MonetColorPalette(type, depth).value)
-        ThemeColor.updateCachedColor(mContext)
+        ThemeColor.updateCachedColor(context)
         return this
     }
 
@@ -91,13 +91,13 @@ class ThemeStore internal constructor(private val mContext: Context) {
     fun commit() =
         mEditor.putLong(VALUES_CHANGED, System.currentTimeMillis())
             .putBoolean(IS_CONFIGURED_KEY, true)
-            .also { ThemeColor.updateCachedColor(mContext) }
+            .also { ThemeColor.updateCachedColor(context) }
             .commit()
 
     fun apply() =
         mEditor.putLong(VALUES_CHANGED, System.currentTimeMillis())
             .putBoolean(IS_CONFIGURED_KEY, true)
-            .also { ThemeColor.updateCachedColor(mContext) }
+            .also { ThemeColor.updateCachedColor(context) }
             .apply()
 
     /**
@@ -127,14 +127,12 @@ class ThemeStore internal constructor(private val mContext: Context) {
     companion object {
         internal fun edit(context: Context): ThemeStore = ThemeStore(context)
 
-        fun isConfigured(context: Context): Boolean =
-            ThemeStore(context).isConfigured()
+        fun isConfigured(context: Context): Boolean = ThemeStore(context).isConfigured()
 
         fun isConfigured(
             context: Context,
             @IntRange(from = 0, to = Int.MAX_VALUE.toLong()) version: Int
-        ): Boolean =
-            ThemeStore(context).isConfigured(version)
+        ): Boolean = ThemeStore(context).isConfigured(version)
 
         @SuppressLint("CommitPrefEdits")
         fun didThemeValuesChange(context: Context, since: Long): Boolean =
