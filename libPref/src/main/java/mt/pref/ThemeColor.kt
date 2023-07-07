@@ -34,7 +34,7 @@ object ThemeColor {
     @CheckResult
     @ColorInt
     fun primaryColor(context: Context): Int =
-        if (cachedPrimaryColor < 0) updateCachedPrimaryColor(context) else cachedPrimaryColor
+        if (cachedPrimaryColor <= 0) updateCachedPrimaryColor(context) else cachedPrimaryColor
 
     @CheckResult
     @ColorInt
@@ -44,7 +44,7 @@ object ThemeColor {
     @CheckResult
     @ColorInt
     fun accentColor(context: Context): Int =
-        if (cachedAccentColor < 0) updateCachedAccentColor(context) else cachedAccentColor
+        if (cachedAccentColor <= 0) updateCachedAccentColor(context) else cachedAccentColor
 
     @CheckResult
     fun coloredStatusBar(context: Context): Boolean =
