@@ -137,22 +137,27 @@ object ThemeColor {
                     Handler(Looper.myLooper() ?: Looper.getMainLooper())
                         .postDelayed(
                             {
-                                when (key) {
-                                    KEY_ACCENT_COLOR ->
-                                        themeListener.onAccentColorChanged(accentColor(context))
+                                if (key == KEY_ENABLE_MONET) {
+                                    themeListener.onAccentColorChanged(accentColor(context))
+                                    themeListener.onPrimaryColorChanged(primaryColor(context))
+                                } else {
+                                    when (key) {
+                                        KEY_ACCENT_COLOR, KEY_MONET_ACCENT_COLOR ->
+                                            themeListener.onAccentColorChanged(accentColor(context))
 
-                                    KEY_PRIMARY_COLOR ->
-                                        themeListener.onPrimaryColorChanged(primaryColor(context))
+                                        KEY_PRIMARY_COLOR, KEY_MONET_PRIMARY_COLOR ->
+                                            themeListener.onPrimaryColorChanged(primaryColor(context))
 
-                                    KEY_APPLY_PRIMARYDARK_STATUSBAR ->
-                                        themeListener.onStatusBarTintSettingChanged(
-                                            coloredStatusBar(context)
-                                        )
+                                        KEY_APPLY_PRIMARYDARK_STATUSBAR ->
+                                            themeListener.onStatusBarTintSettingChanged(
+                                                coloredStatusBar(context)
+                                            )
 
-                                    KEY_APPLY_PRIMARY_NAVBAR ->
-                                        themeListener.onNavigationBarTintSettingChanged(
-                                            coloredNavigationBar(context)
-                                        )
+                                        KEY_APPLY_PRIMARY_NAVBAR ->
+                                            themeListener.onNavigationBarTintSettingChanged(
+                                                coloredNavigationBar(context)
+                                            )
+                                    }
                                 }
                             },
                             500
