@@ -82,23 +82,22 @@ class ThemeStore internal constructor(private val context: Context) {
         @Depth depth: Int
     ): ThemeStore {
         mEditor.putInt(KEY_MONET_ACCENT_COLOR, MonetColorPalette(type, depth).value)
-        ThemeColor.updateCachedColor(context)
         return this
     }
 
-    fun markChanged() = mEditor.commit()
+    fun markChanged() = mEditor.commit().also { ThemeColor.updateCachedColor(context) }
 
     fun commit() =
         mEditor.putLong(VALUES_CHANGED, System.currentTimeMillis())
             .putBoolean(IS_CONFIGURED_KEY, true)
-            .also { ThemeColor.updateCachedColor(context) }
             .commit()
+            .also { ThemeColor.updateCachedColor(context) }
 
     fun apply() =
         mEditor.putLong(VALUES_CHANGED, System.currentTimeMillis())
             .putBoolean(IS_CONFIGURED_KEY, true)
-            .also { ThemeColor.updateCachedColor(context) }
             .apply()
+            .also { ThemeColor.updateCachedColor(context) }
 
     /**
      * **Dangerous !**, this reset all SharedPreferences!
