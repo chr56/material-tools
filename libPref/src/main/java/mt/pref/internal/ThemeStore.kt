@@ -22,10 +22,9 @@ import mt.util.color.resolveColor
 @Suppress("unused")
 class ThemeStore internal constructor(private val context: Context) {
 
-    internal val pref: SharedPreferences = context.getSharedPreferences(
-        CONFIG_PREFS_KEY_DEFAULT,
-        Context.MODE_PRIVATE
-    )
+    internal val pref: SharedPreferences =
+        context.getSharedPreferences(CONFIG_PREFS_KEY_DEFAULT, Context.MODE_PRIVATE)
+
     private val mEditor = pref.edit()
 
     fun primaryColor(@ColorInt color: Int): ThemeStore {
@@ -69,18 +68,12 @@ class ThemeStore internal constructor(private val context: Context) {
         return this
     }
 
-    fun preferredMonetPrimaryColor(
-        @Type type: Int,
-        @Depth depth: Int
-    ): ThemeStore {
+    fun preferredMonetPrimaryColor(@Type type: Int, @Depth depth: Int): ThemeStore {
         mEditor.putInt(KEY_MONET_PRIMARY_COLOR, MonetColorPalette(type, depth).value)
         return this
     }
 
-    fun preferredMonetAccentColor(
-        @Type type: Int,
-        @Depth depth: Int
-    ): ThemeStore {
+    fun preferredMonetAccentColor(@Type type: Int, @Depth depth: Int): ThemeStore {
         mEditor.putInt(KEY_MONET_ACCENT_COLOR, MonetColorPalette(type, depth).value)
         return this
     }
@@ -112,9 +105,7 @@ class ThemeStore internal constructor(private val context: Context) {
     }
 
     @SuppressLint("ApplySharedPref")
-    fun isConfigured(
-        @IntRange(from = 0, to = Int.MAX_VALUE.toLong()) version: Int
-    ): Boolean {
+    fun isConfigured(@IntRange(from = 0, to = Int.MAX_VALUE.toLong()) version: Int): Boolean {
         val lastVersion = pref.getInt(IS_CONFIGURED_VERSION_KEY, -1)
         if (version > lastVersion) {
             mEditor.putInt(IS_CONFIGURED_VERSION_KEY, version).commit()
@@ -129,9 +120,9 @@ class ThemeStore internal constructor(private val context: Context) {
         fun isConfigured(context: Context): Boolean = ThemeStore(context).isConfigured()
 
         fun isConfigured(
-            context: Context,
-            @IntRange(from = 0, to = Int.MAX_VALUE.toLong()) version: Int
-        ): Boolean = ThemeStore(context).isConfigured(version)
+            context: Context, @IntRange(from = 0, to = Int.MAX_VALUE.toLong()) version: Int
+        ): Boolean =
+            ThemeStore(context).isConfigured(version)
 
         @SuppressLint("CommitPrefEdits")
         fun didThemeValuesChange(context: Context, since: Long): Boolean =
