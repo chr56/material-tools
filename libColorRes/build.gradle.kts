@@ -1,6 +1,5 @@
 plugins {
-    id("com.android.library")
-    // id("kotlin-android")
+    alias(libs.plugins.androidGradlePluginLibrary)
     id("maven-publish")
 }
 val libVersion = rootProject.extra["libVersion"] as String
@@ -56,7 +55,7 @@ android {
 }
 
 dependencies {
-    implementation("androidx.annotation:annotation:1.5.0")
+    implementation(libs.androidx.annotation)
 }
 
 publishing {

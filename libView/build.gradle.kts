@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.library")
-    id("kotlin-android")
+    alias(libs.plugins.androidGradlePluginLibrary)
+    alias(libs.plugins.kotlin.android)
     id("maven-publish")
 }
 val libVersion = rootProject.extra["libVersion"] as String
@@ -55,9 +55,11 @@ dependencies {
     api(projects.libTint)
     api(projects.libPref)
     api(projects.libColorRes)
-    compileOnly("androidx.appcompat:appcompat:1.6.1")
-    compileOnly("androidx.preference:preference:1.2.0")
-//    compileOnly("com.google.android.material:material:1.6.1")
+    compileOnly(libs.androidx.appcompat)
+    compileOnly(libs.androidx.recyclerview)
+    compileOnly(libs.androidx.fragment)
+    compileOnly(libs.androidx.activity)
+    compileOnly(libs.androidx.preference)
 }
 
 
