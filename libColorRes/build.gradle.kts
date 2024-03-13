@@ -6,8 +6,8 @@ plugins {
 val libVersion = rootProject.extra["libVersion"] as String
 
 android {
-    compileSdk = 33
-    buildToolsVersion = "33.0.0"
+    compileSdk = 34
+    buildToolsVersion = "34.0.0"
     namespace = "mt.color"
 
     defaultConfig {
