@@ -43,6 +43,7 @@ fun Activity.requireLightStatusbarAuto(bgColor: Int) =
     requireLightStatusbar(isColorLight(bgColor))
 
 fun Activity.requireLightStatusbar(enabled: Boolean) {
+    @Suppress("DEPRECATION")
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
         val wic = this.window.insetsController
         if (wic != null) {
@@ -92,6 +93,7 @@ fun Activity.requireLightNavigationBarAuto(bgColor: Int) {
 }
 
 fun Activity.requireLightNavigationBar(enabled: Boolean) {
+    @Suppress("DEPRECATION")
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
         this.window.insetsController?.let { insetsController ->
             if (enabled) {
@@ -149,6 +151,7 @@ fun Activity.setTaskDescriptionColor(@ColorInt color: Int) {
                 .setBackgroundColor(c).setLabel(this.title as String)
                 .build()
         } else {
+            @Suppress("DEPRECATION")
             TaskDescription(this.title as String, null, c)
         }
     )

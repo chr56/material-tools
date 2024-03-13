@@ -174,8 +174,8 @@ object MonetColor {
     value class MonetColorPalette internal constructor(internal val value: Int) {
         constructor(@Type type: Int, @Depth depth: Int) : this((type shl SHIFT) + depth)
 
-        val type: Int @get:Type get() = value ushr SHIFT
-        val depth: Int @get:Depth get() = value shl SHIFT ushr SHIFT
+        val type: Int @Type get() = value ushr SHIFT
+        val depth: Int @Depth get() = value shl SHIFT ushr SHIFT
 
         @RequiresApi(S)
         @ColorInt

@@ -18,7 +18,7 @@ fun removeOnGlobalLayoutListener(v: View, listener: OnGlobalLayoutListener?) {
 }
 
 fun setBackgroundCompat(view: View, drawable: Drawable?) {
-    view.setBackgroundDrawable(drawable)
+    view.background = drawable
 }
 
 fun setBackgroundTransition(view: View, newDrawable: Drawable): TransitionDrawable {
