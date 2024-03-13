@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -6,7 +8,6 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
@@ -19,4 +20,8 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "MaterialTools"
 rootProject.buildFileName = "build.gradle.kts"
 
-include("libUtil", "libPref", "libColorRes", "libTint","libView")
+include("libColorRes")
+include("libUtil")
+include("libPref")
+include("libTint")
+include("libView")
